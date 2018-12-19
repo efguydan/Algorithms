@@ -1,10 +1,12 @@
 package com.efedaniel.algo;
 
+import java.util.Arrays;
+
 /**
  * 
  * @author EfeDaniel
- * Link: 
- * Progress: In Progress
+ * Link: https://www.hackerrank.com/challenges/bigger-is-greater/problem
+ * Progress: Done
  *
  */
 
@@ -30,48 +32,66 @@ public class BiggerIsGreater {
 	static String biggerIsGreater(String w) {
 
         String startString = w;
-        int length = w.length();
+        int endIndex = w.length() - 1;
         w.toLowerCase();
-        int positionToStart = -1;
-        for (int i = length-1; i > 0; i--) {
-            if (getPosition(w.charAt(i - 1)) > getPosition(w.charAt(i))) {
-                continue;
-            } else {
-                w = swap(w, i, i - 1);
-                positionToStart = i;
+        int positionToStart = -17;
+        String toKeep = "";
+        String toRearrange = "";
+        
+        for (int i = endIndex; i > 0; i--) {
+            if (getPosition(w.charAt(i - 1)) < getPosition(w.charAt(i))) {
+                positionToStart = i - 1;
+                toRearrange = w.substring(positionToStart, endIndex + 1);
+                toKeep = w.substring(0, positionToStart);
                 break;
             }
         }
 
-        if (positionToStart >= 0) {
-            for (int j = positionToStart; j < length - 1; j++) {
-                if (getPosition(w.charAt(j)) < getPosition(w.charAt(j + 1))) {
-                   w = swap(w, j, j + 1);
-                }
-            }
+        if (positionToStart != -17) {
+            toRearrange = reArrange(toRearrange);
         }
-        if (startString.equals(w)) {
+        
+        w = toKeep + toRearrange;
+        
+        if (startString.equals(w) || w.length() != startString.length()) {
             return "no answer";
         }
+        
         return w;
     }
 
-    static int getPosition(char alphabet) {
+    private static String reArrange(String word) {
+		String nextBiggestLetter = String.valueOf(getNextBiggestLetter(word));
+    	word = word.replaceFirst(nextBiggestLetter, "");
+    	word = sortString(word);
+    	word = nextBiggestLetter + word;
+		return word;
+	}
+
+	private static String sortString(String word) {
+		char[] chars = word.toCharArray();
+	    Arrays.sort(chars);
+	    String sorted = new String(chars);
+		return sorted;
+	}
+
+	private static char getNextBiggestLetter(String word) {
+		int positionOfFirstLetter = getPosition(word.charAt(0));
+		int smallest = getPosition(word.charAt(1));
+		for (int i = 1; i < word.length(); i++) {
+			if (getPosition(word.charAt(i)) > positionOfFirstLetter) {
+				smallest = getPosition(word.charAt(i)) < smallest ? getPosition(word.charAt(i)) : smallest;
+			}
+		}
+		return getCharAt(smallest);
+	}
+
+	static int getPosition(char alphabet) {
         int pos = alphabet - 'a' + 1;
         return pos;
     }
-
-    static String swap(String word, int pos1, int pos2) {
-        String[] wordArray = word.split("");
-        String temp = wordArray[pos2];
-        wordArray[pos2] = wordArray[pos1];
-        wordArray[pos1] = temp;
-
-        String returned = "";
-        for (int k = 0; k < wordArray.length; k++) {
-            returned = returned + wordArray[k];
-        }
-        return returned;
-    }
-
+	
+	static char getCharAt(int position) {
+		return (char) (position + 'a' - 1);
+	}
 }
