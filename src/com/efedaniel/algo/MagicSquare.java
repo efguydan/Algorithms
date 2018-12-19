@@ -3,7 +3,7 @@ package com.efedaniel.algo;
 /**
  * 
  * @author EfeDaniel
- * Link: 
+ * Link: https://www.hackerrank.com/challenges/magic-square-forming/problem
  * Progress: Done
  *
  */

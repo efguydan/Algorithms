@@ -3,7 +3,7 @@ package com.efedaniel.algo;
 /**
  * 
  * @author EfeDaniel
- * Link: 
+ * Link: https://www.hackerrank.com/challenges/summing-the-n-series/problem
  * Progress: Done
  *
  */

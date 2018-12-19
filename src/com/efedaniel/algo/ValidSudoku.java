@@ -10,7 +10,7 @@ import java.util.Set;
 /**
  * 
  * @author EfeDaniel
- * Link: 
+ * Link: https://leetcode.com/problems/valid-sudoku/description/
  * Progress: Done
  *
  */
