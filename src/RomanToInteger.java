@@ -1,6 +1,3 @@
-package com.efedaniel.algo;
-
-
 /**
  *
  * @author EfeDaniel

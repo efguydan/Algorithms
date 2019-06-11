@@ -1,5 +1,3 @@
-package com.efedaniel.algo;
-
 import java.util.ArrayList;
 
 /**
