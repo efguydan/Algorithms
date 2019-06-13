@@ -15,13 +15,13 @@ fun main(args : Array<String>) {
 }
 
 fun intToRoman(num: Int): String {
-    var number = num;
+    var number = num
     var answer = StringBuilder()
     var nextPossibleRoman : Int;
     while (number > 0) {
         nextPossibleRoman = getNextPossibleRoman(number);
         answer.append(getRomanFromNumber(nextPossibleRoman))
-        number -= nextPossibleRoman;
+        number -= nextPossibleRoman
     }
     return answer.toString();
 }

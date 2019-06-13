@@ -11,17 +11,19 @@ import java.util.Arrays;
 public class JumpGameII {
 	public static void main(String [] args) {
 		int [] nums1 = {1, 3, 4};
-		System.out.println(jump(nums1));
+		System.out.println(jump(nums1) + " " + (jump(nums1) == 2));
 		int [] nums2 = {1, 2, 3, 4, 5};
-		System.out.println(jump(nums2));
+		System.out.println(jump(nums2) + " " + (jump(nums2) == 3));
 		int [] nums3 = {2, 1};
-		System.out.println(jump(nums3));
+		System.out.println(jump(nums3) + " " + (jump(nums3) == 1));
 		int [] nums4 = {2, 1, 1};
-		System.out.println(jump(nums4));
+		System.out.println(jump(nums4) + " " + (jump(nums4) == 1));
 		int [] nums5 = {2, 1, 1, 1};
-		System.out.println(jump(nums5));
+		System.out.println(jump(nums5) + " " + (jump(nums5) == 2));
 		int [] nums6 = {2, 3, 1, 1, 1};
-		System.out.println(jump(nums6));
+		System.out.println(jump(nums6) + " " + (jump(nums6) == 2));
+        int [] nums7 = {4, 1, 1, 3, 1, 1, 1};
+        System.out.println(jump(nums7) + " " + (jump(nums7) == 2));
 	}
 	
 	public static int jump(int[] nums) {
@@ -50,7 +52,7 @@ public class JumpGameII {
         for(int i = 0; i < nums[index]; i++){
             if(index + i > nums.length - 1)
                 continue;
-            if(nums[index + i] > max)
+            if(nums[index + i] >= max)
                 max = nums[index + i];
         }
         while(index + max > nums.length - 1)
