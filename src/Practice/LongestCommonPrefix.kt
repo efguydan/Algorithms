@@ -1,5 +1,11 @@
 package Practice
 
+/**
+ * @author EfeDaniel
+ * Link: https://leetcode.com/problems/longest-common-prefix
+ * Progress: Done
+ */
+
 fun main(args: Array<String>) {
     var answer = longestCommonPrefix(arrayOf("flower", "flow", "flight"))
     println("$answer " + answer.equals("fl"))
@@ -28,6 +34,7 @@ fun longestCommonPrefix(strs: Array<String>): String {
                     break
                 }
             } catch (error: StringIndexOutOfBoundsException) {
+                answer.delete(index, answer.length)
                 break;
             }
             index++
