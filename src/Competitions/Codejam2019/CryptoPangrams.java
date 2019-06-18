@@ -1,5 +1,10 @@
+package Competitions.Codejam2019;
+
 import java.math.BigInteger;
-import java.util.*;
+import java.util.HashMap;
+import java.util.Scanner;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class CryptoPangrams {
 
@@ -9,7 +14,7 @@ public class CryptoPangrams {
         for (int ks = 1; ks <= T; ks++) {
             int largestPrime = input.nextInt();
             int noOfInput = input.nextInt();
-            BigInteger[] numberArray  = new BigInteger[noOfInput];
+            BigInteger[] numberArray = new BigInteger[noOfInput];
             for (int i = 0; i < noOfInput; i++) {
                 numberArray[i] = input.nextBigInteger();
             }
@@ -20,7 +25,7 @@ public class CryptoPangrams {
     private static String solve(int largestPrime, BigInteger[] numberArray) {
         StringBuilder answer = new StringBuilder();
         Set<BigInteger> primeSet = new TreeSet<>();
-        HashMap<BigInteger, BigInteger> numberListWithPrimes= new HashMap<>();
+        HashMap<BigInteger, BigInteger> numberListWithPrimes = new HashMap<>();
         BigInteger firstprime = getGCD(numberArray[0], numberArray[1]);
         primeSet.add(firstprime);
         primeSet.add(numberArray[0].divide(firstprime));
@@ -31,7 +36,7 @@ public class CryptoPangrams {
             lastCommonPrime = numberArray[i].divide(lastCommonPrime);
             numberListWithPrimes.put(numberArray[i], lastCommonPrime);
         }
-        primeSet.add(numberArray[numberArray.length - 1].divide(numberListWithPrimes.get(numberArray[numberArray.length -1])));
+        primeSet.add(numberArray[numberArray.length - 1].divide(numberListWithPrimes.get(numberArray[numberArray.length - 1])));
         HashMap<BigInteger, String> numberToChar = mapCharacterToNumber(primeSet.toArray(new BigInteger[primeSet.size()]));
         answer.append(numberToChar.get(numberArray[0].divide(numberListWithPrimes.get(numberArray[0]))));
         for (int i = 0; i < numberArray.length; i++) {
@@ -54,7 +59,7 @@ public class CryptoPangrams {
     public static HashMap<BigInteger, String> mapCharacterToNumber(BigInteger[] primeNumbers) {
         HashMap<BigInteger, String> letterIndexMap = new HashMap<>();
         String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        for(int i = 0; i < 26; i++) {
+        for (int i = 0; i < 26; i++) {
             letterIndexMap.put(primeNumbers[i], String.valueOf(alphabet.charAt(i)));
         }
         return letterIndexMap;

@@ -1,4 +1,4 @@
-import java.util.Scanner;
+package Competitions.Codejam2019;
 
 public class Main {
 
@@ -8,7 +8,7 @@ public class Main {
 //        ForegoneSolution.foregoneSolution();
 //        YouCanGoYourOwnWay.youCanGoYourOwnWay();
 //        CryptoPangrams.cryptoPangrams();
-//        RobotProgrammingStrategy.robotProgrammingStrategy();
-        BacterialTactics.bacterialTactics();
+        RobotProgrammingStrategy.robotProgrammingStrategy();
+//        BacterialTactics.bacterialTactics();
     }
 }

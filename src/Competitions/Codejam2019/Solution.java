@@ -1,6 +1,6 @@
-import java.util.*;
+package Competitions.Codejam2019;
 
-class Solution {
+public class Solution {
     static int solution(int X, int Y, int[] A) {
         int N = A.length;
         int result = -1;
@@ -17,12 +17,12 @@ class Solution {
         return result;
     }
 
-    static int[] solution2 (int N) {
-        int [] answer = new int [N];
+    static int[] solution2(int N) {
+        int[] answer = new int[N];
 
-        for (int i = 0; i<N/2; i++) {
-            answer[i] = i+1;
-            answer[N-1-i] = -1*(i+1);
+        for (int i = 0; i < N / 2; i++) {
+            answer[i] = i + 1;
+            answer[N - 1 - i] = -1 * (i + 1);
         }
         return answer;
     }

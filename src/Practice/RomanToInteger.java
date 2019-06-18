@@ -1,13 +1,13 @@
+package Practice;
+
 /**
- *
  * @author EfeDaniel
  * Link: https://leetcode.com/problems/roman-to-integer/
  * Progress: Done
- *
  */
 
 public class RomanToInteger {
-    public static void main (String[] args) {
+    public static void main(String[] args) {
         System.out.println("III : " + String.valueOf(romanToInt("III")));
         System.out.println("IV : " + String.valueOf(romanToInt("IV")));
         System.out.println("VI : " + String.valueOf(romanToInt("VI")));
@@ -19,8 +19,8 @@ public class RomanToInteger {
         int answer = 0;
         for (int i = split.length - 1; i >= 0; i--) {
             int currentValue = getNumberFromRoman(split[i]);
-            if (i > 0 && currentValue > getNumberFromRoman(split[i-1])) {
-                answer += currentValue - getNumberFromRoman(split[i-1]);
+            if (i > 0 && currentValue > getNumberFromRoman(split[i - 1])) {
+                answer += currentValue - getNumberFromRoman(split[i - 1]);
                 i--;
             } else {
                 answer += getNumberFromRoman(split[i]);
@@ -29,7 +29,7 @@ public class RomanToInteger {
         return answer;
     }
 
-    private static int getNumberFromRoman (String s) {
+    private static int getNumberFromRoman(String s) {
         switch (s) {
             case "I":
                 return 1;

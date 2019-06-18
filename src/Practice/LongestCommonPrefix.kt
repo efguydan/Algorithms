@@ -1,17 +1,19 @@
-fun main(args : Array<String>) {
-    var answer = longestCommonPrefix(arrayOf("flower","flow","flight"))
+package Practice
+
+fun main(args: Array<String>) {
+    var answer = longestCommonPrefix(arrayOf("flower", "flow", "flight"))
     println("$answer " + answer.equals("fl"))
-    answer = longestCommonPrefix(arrayOf("dog","racecar","car"))
+    answer = longestCommonPrefix(arrayOf("dog", "racecar", "car"))
     println("$answer " + answer.equals(""))
     answer = longestCommonPrefix(arrayOf("aa", "a"))
     println("$answer " + answer.equals("a"))
 }
 
 fun longestCommonPrefix(strs: Array<String>): String {
-    var answer : StringBuilder = StringBuilder()
+    var answer: StringBuilder = StringBuilder()
     try {
         answer.append(strs[0])
-    } catch (error : ArrayIndexOutOfBoundsException) {
+    } catch (error: ArrayIndexOutOfBoundsException) {
         return "";
     }
 
@@ -25,7 +27,7 @@ fun longestCommonPrefix(strs: Array<String>): String {
                     answer.delete(index, answer.length)
                     break
                 }
-            } catch (error : StringIndexOutOfBoundsException) {
+            } catch (error: StringIndexOutOfBoundsException) {
                 break;
             }
             index++

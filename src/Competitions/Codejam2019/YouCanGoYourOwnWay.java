@@ -1,3 +1,5 @@
+package Competitions.Codejam2019;
+
 import java.util.Scanner;
 
 public class YouCanGoYourOwnWay {
@@ -36,10 +38,10 @@ public class YouCanGoYourOwnWay {
             answer.append(negate(firstChar));
             String toCheck = String.format("%s%s", negate(firstChar), negate(firstChar));
             int startIndex = lydiaPattern.indexOf(toCheck) - 1;
-            for(int i = 1; i< startIndex; i++) {
+            for (int i = 1; i < startIndex; i++) {
                 answer.append(negate(firstChar));
             }
-            for (int i=0; i < dimension - 1; i++) {
+            for (int i = 0; i < dimension - 1; i++) {
                 answer.append(firstChar);
             }
             for (int i = answer.length(); i < lydiaPattern.length(); i++) {
@@ -67,17 +69,17 @@ public class YouCanGoYourOwnWay {
         }
         int length = lydiaPattern.length();
         for (int i = 1; i < length; i++) {
-            if (lydiaPattern.charAt(i) == lydiaPattern.charAt(i-1)) {
+            if (lydiaPattern.charAt(i) == lydiaPattern.charAt(i - 1)) {
                 answer.append(lydiaPattern.charAt(i));
             } else {
                 if (i == length - 1 && lydiaPattern.charAt(i) == 'S') {
-                        answer.append("E");
-                } else  if (i == length - 1 && lydiaPattern.charAt(i) == 'E') {
+                    answer.append("E");
+                } else if (i == length - 1 && lydiaPattern.charAt(i) == 'E') {
                     answer.append("S");
-                } else if (lydiaPattern.charAt(i) == lydiaPattern.charAt(i-1)) {
+                } else if (lydiaPattern.charAt(i) == lydiaPattern.charAt(i - 1)) {
                     answer.append(lydiaPattern.charAt(i));
-                } else if (lydiaPattern.charAt(i) != lydiaPattern.charAt(i-1)) {
-                    if (lydiaPattern.charAt(i+1) == 'S') {
+                } else if (lydiaPattern.charAt(i) != lydiaPattern.charAt(i - 1)) {
+                    if (lydiaPattern.charAt(i + 1) == 'S') {
                         answer.append("E");
                     } else {
                         answer.append("S");
@@ -85,7 +87,7 @@ public class YouCanGoYourOwnWay {
                 }
             }
         }
-        answer.replace(answer.length()-1, answer.length(), "");
+        answer.replace(answer.length() - 1, answer.length(), "");
         return answer.toString();
     }
 }

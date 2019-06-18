@@ -1,3 +1,5 @@
+package Competitions.Codejam2019;
+
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -21,26 +23,26 @@ public class TroubleSort {
     }
 
     private static String solve2(int[] numberArray) {
-        int[] oddArray = new int[numberArray.length/2];
-        int[] evenArray = new int[(int) Math.ceil((double) numberArray.length/2)];
-        for (int i = 0; i< numberArray.length; i++) {
-            if (i%2 == 0) {
-                evenArray[i/2] = numberArray[i];
+        int[] oddArray = new int[numberArray.length / 2];
+        int[] evenArray = new int[(int) Math.ceil((double) numberArray.length / 2)];
+        for (int i = 0; i < numberArray.length; i++) {
+            if (i % 2 == 0) {
+                evenArray[i / 2] = numberArray[i];
             } else {
-                oddArray[i/2] = numberArray[i];
+                oddArray[i / 2] = numberArray[i];
             }
         }
         Arrays.sort(evenArray);
         Arrays.sort(oddArray);
-        for (int i = 0; i<numberArray.length; i++) {
-            if (i%2 == 0) {
-                numberArray[i] = evenArray[i/2];
+        for (int i = 0; i < numberArray.length; i++) {
+            if (i % 2 == 0) {
+                numberArray[i] = evenArray[i / 2];
             } else {
-                numberArray[i] = oddArray[i/2];
+                numberArray[i] = oddArray[i / 2];
             }
             System.out.print(numberArray[i] + " ");
-            if (i > 1 && numberArray[i] < numberArray[i-1]) {
-                return String.valueOf(i-1);
+            if (i > 1 && numberArray[i] < numberArray[i - 1]) {
+                return String.valueOf(i - 1);
             }
         }
         return "OK";
@@ -51,18 +53,18 @@ public class TroubleSort {
         while (changesMade) {
             changesMade = false;
             for (int j = 0; j < numberArray.length - 2; j++) {
-                if (numberArray[j] > numberArray[j+2]) {
+                if (numberArray[j] > numberArray[j + 2]) {
                     int temp = numberArray[j];
-                    numberArray[j] = numberArray[j+2];
-                    numberArray[j+2] = temp;
+                    numberArray[j] = numberArray[j + 2];
+                    numberArray[j + 2] = temp;
                     changesMade = true;
                 }
                 System.out.println();
             }
         }
         for (int i = 1; i < numberArray.length; i++) {
-            if (numberArray[i] < numberArray[i-1]) {
-                return String.valueOf(i-1);
+            if (numberArray[i] < numberArray[i - 1]) {
+                return String.valueOf(i - 1);
             }
         }
         return "OK";

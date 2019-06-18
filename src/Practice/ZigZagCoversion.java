@@ -1,9 +1,9 @@
+package Practice;
+
 /**
- *
  * @author EfeDaniel
  * Link: https://leetcode.com/problems/zigzag-conversion/
  * Progress: Done
- *
  */
 
 public class ZigZagCoversion {
@@ -13,7 +13,7 @@ public class ZigZagCoversion {
         return String.format("%s %b", gottenAnswer, gottenAnswer.equals(answer));
     }
 
-    public static void main (String[] args) {
+    public static void main(String[] args) {
         System.out.println(getWhatToPrint("PAYPALISHIRING", 3, "PAHNAPLSIIGYIR"));
         System.out.println(getWhatToPrint("PAYPALISHIRING", 4, "PINALSIGYAHRPI"));
         System.out.println(getWhatToPrint("A", 1, "A"));

@@ -1,4 +1,4 @@
-package LeapfrogCh1;
+package Competitions.FacebookHackerCup2019.LeapfrogCh1;
 
 public class Main {
 
@@ -6,7 +6,7 @@ public class Main {
         String[] inputs = {"leapfrog_ch__sample_input", "leapfrog_ch_"};
         for (String in : inputs) {
             LeapfrogChOne leapfrogChOne = new LeapfrogChOne();
-            String filepath = "/Users/efedaniel/IdeaProjects/FacebookHackerCup/src/LeapfrogCh1/" ;
+            String filepath = "/Users/efedaniel/IdeaProjects/Algorithms/src/Competitions/FacebookHackerCup2019/LeapfrogCh1/";
             leapfrogChOne.parseInput(filepath + in + ".txt");
             leapfrogChOne.simulate();
             leapfrogChOne.printOutput(filepath + in + "_output.txt");

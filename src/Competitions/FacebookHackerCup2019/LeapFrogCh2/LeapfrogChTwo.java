@@ -1,4 +1,4 @@
-package LeapFrogCh2;
+package Competitions.FacebookHackerCup2019.LeapFrogCh2;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -25,7 +25,7 @@ public class LeapfrogChTwo {
 
     public void simulate() {
         for (int i = 0; i < questionList.size(); i++) {
-            answerList.add(String.format("Case #%d: %s", i+1, solve(questionList.get(i))));
+            answerList.add(String.format("Case #%d: %s", i + 1, solve(questionList.get(i))));
         }
     }
 
@@ -46,7 +46,7 @@ public class LeapfrogChTwo {
             }
         }
         if (numberOfB == 0 || numberOfDot == 0 || (numberOfB < 2 && numberOfDot >= 2)) {
-            return  "N";
+            return "N";
         }
         return "Y";
     }

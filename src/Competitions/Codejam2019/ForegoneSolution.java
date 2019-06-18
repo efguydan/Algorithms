@@ -1,3 +1,5 @@
+package Competitions.Codejam2019;
+
 import java.util.Scanner;
 
 public class ForegoneSolution {

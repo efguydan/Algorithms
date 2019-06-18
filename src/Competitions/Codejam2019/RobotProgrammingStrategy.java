@@ -1,3 +1,5 @@
+package Competitions.Codejam2019;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -56,7 +58,7 @@ public class RobotProgrammingStrategy {
         return answer.toString();
     }
 
-    public static String toDefeatCharacter (String gesture) {
+    public static String toDefeatCharacter(String gesture) {
         if (gesture.equals("R")) {
             return "P";
         } else if (gesture.equals("P")) {

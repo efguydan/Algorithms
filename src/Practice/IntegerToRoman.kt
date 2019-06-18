@@ -1,4 +1,4 @@
-import java.lang.StringBuilder
+package Practice
 
 /**
  * @author EfeDaniel
@@ -6,7 +6,7 @@ import java.lang.StringBuilder
  * Progress: Done
  */
 
-fun main(args : Array<String>) {
+fun main(args: Array<String>) {
     println("3 : " + intToRoman(3))
     println("4 : " + intToRoman(4))
     println("9 : " + intToRoman(9))
@@ -17,7 +17,7 @@ fun main(args : Array<String>) {
 fun intToRoman(num: Int): String {
     var number = num
     var answer = StringBuilder()
-    var nextPossibleRoman : Int;
+    var nextPossibleRoman: Int;
     while (number > 0) {
         nextPossibleRoman = getNextPossibleRoman(number);
         answer.append(getRomanFromNumber(nextPossibleRoman))
@@ -27,7 +27,7 @@ fun intToRoman(num: Int): String {
 }
 
 fun getNextPossibleRoman(num: Int): Int {
-    var array : Array<Int> = arrayOf(1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1)
+    var array: Array<Int> = arrayOf(1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1)
     for (number in array) {
         if (num >= number)
             return number
@@ -35,8 +35,8 @@ fun getNextPossibleRoman(num: Int): Int {
     return 0;
 }
 
-fun getRomanFromNumber(num : Int) : String {
-    return when(num) {
+fun getRomanFromNumber(num: Int): String {
+    return when (num) {
         1 -> "I"
         4 -> "IV"
         5 -> "V"

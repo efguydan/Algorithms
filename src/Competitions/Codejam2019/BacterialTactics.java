@@ -1,3 +1,5 @@
+package Competitions.Codejam2019;
+
 import java.util.Scanner;
 
 public class BacterialTactics {
@@ -8,7 +10,7 @@ public class BacterialTactics {
         for (int ks = 1; ks <= T; ks++) {
             int rows = input.nextInt();
             int cols = input.nextInt();
-            String [][] gameMatrix = new String[rows][cols];
+            String[][] gameMatrix = new String[rows][cols];
             for (int i = 0; i < rows; i++) {
                 for (int j = 0; j < cols; j++) {
                     gameMatrix[i][j] = input.next();
@@ -29,7 +31,7 @@ public class BacterialTactics {
         return noOfBeccaMoves;
     }
 
-    private static String [][] playOptimizedMove(int rows, int cols, String[][] gameMatrix) {
+    private static String[][] playOptimizedMove(int rows, int cols, String[][] gameMatrix) {
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
 

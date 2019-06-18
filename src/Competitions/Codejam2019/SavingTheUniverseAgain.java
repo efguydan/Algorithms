@@ -1,3 +1,5 @@
+package Competitions.Codejam2019;
+
 import java.util.Scanner;
 
 /**
@@ -24,16 +26,16 @@ public class SavingTheUniverseAgain {
     private static int solve(int damage, String pattern) {
         int totalChanges = 0;
         while (calculateDamage(pattern) > damage) {
-            for (int i = pattern.length()-1; i > 0; i--) {
-                if (pattern.charAt(i) == 'S' && pattern.charAt(i-1) == 'C') {
+            for (int i = pattern.length() - 1; i > 0; i--) {
+                if (pattern.charAt(i) == 'S' && pattern.charAt(i - 1) == 'C') {
                     StringBuilder sb = new StringBuilder(pattern);
                     sb.setCharAt(i, 'C');
-                    sb.setCharAt(i-1, 'S');
+                    sb.setCharAt(i - 1, 'S');
                     pattern = sb.toString();
                     totalChanges++;
                     break;
                 }
-                if (i==1) {
+                if (i == 1) {
                     return -1;
                 }
             }
@@ -44,11 +46,11 @@ public class SavingTheUniverseAgain {
     private static int calculateDamage(String pattern) {
         int currentDamage = 1;
         int totalDamage = 0;
-        for (int i = 0; i<pattern.length(); i++) {
+        for (int i = 0; i < pattern.length(); i++) {
             if (pattern.charAt(i) == 'C') {
-                currentDamage*=2;
+                currentDamage *= 2;
             } else {
-                totalDamage+=currentDamage;
+                totalDamage += currentDamage;
             }
         }
         return totalDamage;
