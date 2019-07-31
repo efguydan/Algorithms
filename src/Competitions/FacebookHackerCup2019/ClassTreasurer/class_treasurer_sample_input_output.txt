@@ -1,0 +1,6 @@
+Case #1: 18
+Case #2: 0
+Case #3: 4
+Case #4: 4
+Case #5: 128
+Case #6: 894682242

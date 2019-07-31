@@ -9,7 +9,7 @@ public class Main {
             String filepath = "/Users/efedaniel/IdeaProjects/Algorithms/src/Competitions/FacebookHackerCup2019/LeapfrogCh2/";
             leapfrogChOne.parseInput(filepath + in + ".txt");
             leapfrogChOne.simulate();
-            leapfrogChOne.printOutput(filepath + in + "_output.txt");
+            leapfrogChOne.parseOutput(filepath + in + "_output.txt");
         }
     }
 }

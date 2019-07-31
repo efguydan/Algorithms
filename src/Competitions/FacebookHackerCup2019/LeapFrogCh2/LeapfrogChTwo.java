@@ -51,7 +51,7 @@ public class LeapfrogChTwo {
         return "Y";
     }
 
-    public void printOutput(String filename) {
+    public void parseOutput(String filename) {
         PrintWriter writer;
         try {
             writer = new PrintWriter(filename, "UTF-8");

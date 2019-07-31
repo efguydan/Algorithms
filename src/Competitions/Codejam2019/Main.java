@@ -8,7 +8,7 @@ public class Main {
 //        ForegoneSolution.foregoneSolution();
 //        YouCanGoYourOwnWay.youCanGoYourOwnWay();
 //        CryptoPangrams.cryptoPangrams();
-        RobotProgrammingStrategy.robotProgrammingStrategy();
-//        BacterialTactics.bacterialTactics();
+//        RobotProgrammingStrategy.robotProgrammingStrategy();
+        BacterialTactics.bacterialTactics();
     }
 }

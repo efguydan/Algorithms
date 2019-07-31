@@ -20,7 +20,7 @@ fun longestCommonPrefix(strs: Array<String>): String {
     try {
         answer.append(strs[0])
     } catch (error: ArrayIndexOutOfBoundsException) {
-        return "";
+        return ""
     }
 
     for (string in strs) {
