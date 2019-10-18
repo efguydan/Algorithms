@@ -74,6 +74,7 @@ class MainClass {
             String out = listNodeToString(ret);
 
             System.out.print(out);
+            System.out.println();
         }
     }
 }
