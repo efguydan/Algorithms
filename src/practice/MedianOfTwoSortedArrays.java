@@ -1,5 +1,11 @@
 package practice;
 
+/**
+ * @author EfeDaniel
+ * Link: https://leetcode.com/problems/median-of-two-sorted-arrays/
+ * Progress: Done
+ */
+
 public class MedianOfTwoSortedArrays {
 
     public static void main(String[] args) {
