@@ -2,6 +2,12 @@ package practice;
 
 import java.util.HashMap;
 
+/**
+ * @author EfeDaniel
+ * Link: https://leetcode.com/problems/longest-substring-without-repeating-characters/
+ * Progress: Done
+ */
+
 public class LongestSubstringWithoutRepeatingCharacters {
 
     public static void main(String[] args) {
