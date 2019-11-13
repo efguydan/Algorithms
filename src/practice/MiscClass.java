@@ -1,25 +1,16 @@
 package practice;
 
+import java.util.Scanner;
+
 class MiscClass {
 
     private static int i = 0;
 
     public static void main(String[] args) {
-        char[] arr = "Hannah".toCharArray();
-        char[] arr2 = "Hello".toCharArray();
-        reverseString(arr);
+        Scanner in = new Scanner(System.in);
+        String A = in.nextLine();
 
-        for (char s: arr)  {
-            System.out.println(s);
-        }
-    }
 
-    public static void reverseString(char[] s) {
-        if (i >= s.length / 2) return;
-        char temp = s[i];
-        s[i] = s[s.length - i - 1];
-        s[s.length - i - 1] = temp;
-        i++;
-        reverseString(s);
+
     }
 }

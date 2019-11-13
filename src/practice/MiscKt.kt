@@ -1,0 +1,5 @@
+package practice
+
+fun main() {
+
+}
