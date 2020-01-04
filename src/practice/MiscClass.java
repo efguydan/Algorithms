@@ -1,16 +1,45 @@
 package practice;
 
+import java.util.HashMap;
 import java.util.Scanner;
 
 class MiscClass {
 
-    private static int i = 0;
-
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        String A = in.nextLine();
+        System.out.println(firstUniqueChar("racecars"));
+    }
 
+//    public static String firstUniqueChar(String string) {
+//        HashMap<Character, Integer> map = new HashMap<>();
+//        for (int i = 0; i < string.length(); i++) {
+//            char currentChar = string.charAt(i);
+//            if (map.containsKey(currentChar)) {
+//                map.put(currentChar, map.get(currentChar) + 1);
+//            } else {
+//                map.put(currentChar, 1);
+//            }
+//        }
+//        for (int i = 0; i < string.length(); i ++) {
+//            if (map.get(string.charAt(i)) == 1) return String.valueOf(string.charAt(i));
+//        }
+//        return "";
+//    }
 
-
+    public static String firstUniqueChar(String string) {
+        //remove all spaces
+        string = string.replaceAll("\\s+", "");
+        //convert string to all lower case
+        string = string.toLowerCase();
+        int prevLength = string.length();
+        while(prevLength > 0) {
+            String currentChar = String.valueOf(string.charAt(0));
+            string = string.replace(currentChar, "");
+            int newLength = string.length();
+            if (prevLength - newLength == 1) {
+                return currentChar;
+            }
+            prevLength = newLength;
+        }
+        return "";
     }
 }
