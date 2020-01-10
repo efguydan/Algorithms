@@ -6,40 +6,12 @@ import java.util.Scanner;
 class MiscClass {
 
     public static void main(String[] args) {
-        System.out.println(firstUniqueChar("racecars"));
+        int homerAge = Integer.MIN_VALUE;
+        changeHomer(homerAge);
+        System.out.println(homerAge);
     }
 
-//    public static String firstUniqueChar(String string) {
-//        HashMap<Character, Integer> map = new HashMap<>();
-//        for (int i = 0; i < string.length(); i++) {
-//            char currentChar = string.charAt(i);
-//            if (map.containsKey(currentChar)) {
-//                map.put(currentChar, map.get(currentChar) + 1);
-//            } else {
-//                map.put(currentChar, 1);
-//            }
-//        }
-//        for (int i = 0; i < string.length(); i ++) {
-//            if (map.get(string.charAt(i)) == 1) return String.valueOf(string.charAt(i));
-//        }
-//        return "";
-//    }
-
-    public static String firstUniqueChar(String string) {
-        //remove all spaces
-        string = string.replaceAll("\\s+", "");
-        //convert string to all lower case
-        string = string.toLowerCase();
-        int prevLength = string.length();
-        while(prevLength > 0) {
-            String currentChar = String.valueOf(string.charAt(0));
-            string = string.replace(currentChar, "");
-            int newLength = string.length();
-            if (prevLength - newLength == 1) {
-                return currentChar;
-            }
-            prevLength = newLength;
-        }
-        return "";
+    private static void changeHomer(int homerAge) {
+        homerAge = 35;
     }
 }
