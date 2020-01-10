@@ -1,5 +1,11 @@
 package practice.DeleteNodeInALinkedList;
 
+/**
+ * @author EfeDaniel
+ * Link: https://leetcode.com/problems/delete-node-in-a-linked-list
+ * Progress: Done
+ */
+
 
 public class DeleteNodeInALinkedList {
 
