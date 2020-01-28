@@ -12,6 +12,7 @@ public class ValidateBinarySearchTree {
     private boolean firstTime = true;
 
     public boolean isValidBST(TreeNode root) {
+        currentValue = 0;
         if (root == null) return true; else return traverse(root, true);
     }
 

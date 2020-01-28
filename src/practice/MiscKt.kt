@@ -1,18 +1,18 @@
 package practice
 
 fun main() {
-    print("Enter Person's Year of Birth: ")
-    var person: Int = readLine()?.toInt() ?: 0
-    print("Enter Mother's Year of Birth: ")
-    var mother = readLine()?.toInt() ?: 0
 
-    person = 2019 - person
-    mother = 2019 - mother
+    val original = "abc"
 
-    for (i in 0..6) {
-
-        println("$mother:$person")
-        person += 7
-        mother += 7
+    original.also {
+        println("The original String is $it") // "abc"
+        it.reversed() // even if we evolve it, it is useless
+    }.also {
+        println("The reverse String is ${it}") // "abc"
+        it.length  // even if we evolve it, it is useless
+    }.also {
+        println("The length of the String is ${it}") // "abc"
     }
+
+    println(original)
 }
