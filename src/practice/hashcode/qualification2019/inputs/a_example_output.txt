@@ -1,0 +1,4 @@
+H 3 cat
+V 2 selfie
+V 2 garden
+H 2 garden
