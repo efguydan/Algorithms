@@ -6,12 +6,12 @@ import java.util.Scanner;
 class MiscClass {
 
     public static void main(String[] args) {
-        int homerAge = Integer.MIN_VALUE;
-        changeHomer(homerAge);
-        System.out.println(homerAge);
-    }
+        long start = System.currentTimeMillis();
 
-    private static void changeHomer(int homerAge) {
-        homerAge = 35;
+        int a = 2 + 3;
+
+        long finish = System.currentTimeMillis();
+
+        System.out.println(finish - start);
     }
 }

@@ -8,7 +8,7 @@ public class Solution2 {
 
     private ArrayList<Integer> inputList = new ArrayList<>();
     private ArrayList<Integer> outPutList = new ArrayList<>();
-    private HashMap<Integer, ArrayList<Integer>> used = new HashMap();
+    private HashMap<Integer, ArrayList<Integer>> map = new HashMap();
     private int maxSlice;
     private int currentSum;
 
@@ -27,7 +27,6 @@ public class Solution2 {
             String[] lArr = l.split(" ");
 
             for (int i = 0; i < T; i++) {
-                System.out.println("Getting input: " + i);
                 inputList.add(Integer.valueOf(lArr[i]));
             }
         } catch (IOException e) {
@@ -41,12 +40,40 @@ public class Solution2 {
             if (currentSum + current <= maxSlice) {
                 outPutList.add(i);
                 currentSum += current;
+                placeValueInMap(current, i);
             } else {
-                //TODO Try to remove the blocker
+                int threshold = currentSum + current - maxSlice;
+                for (int k = threshold; k < current; k++) {
+                    if (map.containsKey(k)) {
+                        ArrayList<Integer> list = map.get(k);
+                        int toRemove = list.remove(0);
+                        currentSum += current;
+                        currentSum -= k;
+                        outPutList.remove(outPutList.indexOf(toRemove));
+                        outPutList.add(i);
+                        placeValueInMap(current, i);
+                        if (list.isEmpty())
+                            map.remove(k);
+                        else
+                            map.put(current, list);
+                        break;
+                    }
+                }
             }
             if (currentSum == maxSlice) break;
         }
         System.out.println(currentSum);
+    }
+
+    private void placeValueInMap(int current, int i) {
+        ArrayList<Integer> list;
+        if (map.containsKey(current)) {
+            list = map.get(current);
+        } else {
+            list = new ArrayList<>();
+        }
+        list.add(i);
+        map.put(current, list);
     }
 
     public void parseOutput(String filename) {
