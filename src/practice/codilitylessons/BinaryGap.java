@@ -1,4 +1,4 @@
-package practice;
+package practice.codilitylessons;
 
 /**
  * @author EfeDaniel
