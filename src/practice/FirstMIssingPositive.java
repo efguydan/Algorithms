@@ -51,9 +51,7 @@ public class FirstMIssingPositive {
             else
                 return 1;
 
-        List<Integer> positiveList = new ArrayList<Integer>();
-        int noOfPositives = 0;
-        int sumOfPositives = 0;
+        List<Integer> positiveList = new ArrayList<>();
         int maxPositive = 0;
         int minPositive = 0;
 
@@ -63,8 +61,6 @@ public class FirstMIssingPositive {
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] > 0) {
                 positiveList.add(nums[i]);
-                noOfPositives++;
-                sumOfPositives += nums[i];
                 if (nums[i] > maxPositive) {
                     maxPositive = nums[i];
                     if (minFIrstTime) {
@@ -80,7 +76,7 @@ public class FirstMIssingPositive {
         if (minPositive > 1)
             return 1;
 
-        List<Integer> list2 = new ArrayList<Integer>();
+        List<Integer> list2 = new ArrayList<>();
         for (int i = 1; i < maxPositive; i++)
             list2.add(i);
 

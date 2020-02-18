@@ -3,6 +3,11 @@ package practice.codilitylessons;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * @author EfeDaniel
+ * Link: https://app.codility.com/programmers/lessons/4-counting_elements/perm_check/
+ * Progress: Done
+ */
 public class PermCheck {
     public int solution(int[] a) {
         Set<Integer> set = new HashSet<>();
