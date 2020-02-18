@@ -3,6 +3,11 @@ package practice.codilitylessons;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * @author EfeDaniel
+ * Link: https://app.codility.com/programmers/lessons/4-counting_elements/missing_integer/
+ * Progress: Done
+ */
 public class MissingInteger {
     public static void main(String[] args) {
         int[] nums1 = {1, 3, 6, 4, 1, 2};
