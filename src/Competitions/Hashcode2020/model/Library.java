@@ -11,6 +11,8 @@ public class Library {
     public ArrayList<Book> bookArray;
     public int score;
 
+    public int ratio;
+
     public Library(int id, int numOfBooks, int signUpDays, int amountPerDay, ArrayList<Book> bookArray, int score) {
         this.id = id;
         this.numOfBooks = numOfBooks;
@@ -18,5 +20,6 @@ public class Library {
         this.amountPerDay = amountPerDay;
         this.bookArray = bookArray;
         this.score = score;
+        ratio = numOfBooks / amountPerDay;
     }
 }

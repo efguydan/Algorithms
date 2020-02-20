@@ -2,6 +2,7 @@ package Competitions.Hashcode2020;
 
 import Competitions.Hashcode2020.model.Book;
 import Competitions.Hashcode2020.model.Library;
+import com.sun.codemodel.internal.JForEach;
 
 import java.io.*;
 import java.util.*;
@@ -60,18 +61,54 @@ public class Solution {
     }
 
     public void simulate() {
-        Collections.sort(librariesInput, Comparator.comparingInt(o -> o.score));
-        Collections.reverse(librariesInput);
+        Collections.sort(librariesInput, Comparator.comparingInt(o -> o.signUpDays));
+        ArrayList<ArrayList<Library>> halfList = new ArrayList<>();
+
+        ArrayList<Library> newInput = new ArrayList<>();
+
+        for (int i = 52; i < librariesInput.size(); i += 52) {
+            List<Library> temp;
+            temp = librariesInput.subList(i - 52, i);
+            Collections.sort(temp, Comparator.comparingInt(o -> o.ratio));
+            Collections.reverse(temp);
+            newInput.addAll(temp);
+        }
+
+        if (newInput.isEmpty()) {
+            newInput = librariesInput;
+        }
+        for(int i = newInput.size()+1;  i< librariesInput.size(); i++){
+            newInput.add(librariesInput.get(i));
+        }
+        System.out.println(librariesInput.size());
+        System.out.println(newInput.size());
+
+        librariesOutput = newInput;
         for (int j = 0; j < librariesOutput.size(); j++) {
             Library library = librariesInput.get(j);
+            ArrayList<Book> toRemove = new ArrayList<>();
             for (int k = 0; k < library.numOfBooks; k++) {
                 Book book = library.bookArray.get(k);
-                if (usedBooks.contains(book.id)) {
-
-                    usedBooks.add(book.id);
+                if (!usedBooks.contains(library.bookArray.get(k).id)) {
+                    usedBooks.add(library.bookArray.get(k).id);
+                } else {
+                    toRemove.add(book);
                 }
             }
+
+            library.bookArray.removeAll(toRemove);
         }
+
+        ArrayList<Library> toRe = new ArrayList<>();
+        for (int i = 0; i < librariesOutput.size(); i++) {
+            if (librariesOutput.get(i).bookArray.isEmpty()) {
+                toRe.add(librariesOutput.get(i));
+            } else {
+                librariesOutput.get(i).bookArray.sort(Comparator.comparingInt(o -> o.score));
+                Collections.reverse(librariesOutput.get(i).bookArray);
+            }
+        }
+        librariesOutput.removeAll(toRe);
     }
 
     public void parseOutput(String filename) {
@@ -83,8 +120,8 @@ public class Solution {
             writer.println();
             for (int j = 0; j < librariesOutput.size(); j++) {
                 Library library = librariesOutput.get(j);
-                writer.print(String.format("%d %d\n", library.id, library.numOfBooks));
-                for (int k = 0; k < library.numOfBooks; k++) {
+                writer.print(String.format("%d %d\n", library.id, library.bookArray.size()));
+                for (int k = 0; k < library.bookArray.size(); k++) {
                     writer.print(library.bookArray.get(k).id + " ");
                 }
                 writer.println();
