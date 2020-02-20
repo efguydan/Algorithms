@@ -1,6 +1,7 @@
 package practice;
 
 import java.util.HashMap;
+import java.util.Random;
 import java.util.Scanner;
 
 class MiscClass {
@@ -8,7 +9,9 @@ class MiscClass {
     public static void main(String[] args) {
         long start = System.currentTimeMillis();
 
-        int a = 2 + 3;
+        Random random = new Random();
+        int a = random.nextInt(60);
+        System.out.println(a);
 
         long finish = System.currentTimeMillis();
 
