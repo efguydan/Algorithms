@@ -4,6 +4,11 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Stack;
 
+/**
+ * @author EfeDaniel
+ * Link: https://app.codility.com/programmers/lessons/7-stacks_and_queues/brackets/
+ * Progress: Done
+ */
 public class Brackets {
 
     public static void main(String[] args) {
