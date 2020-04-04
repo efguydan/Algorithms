@@ -40,6 +40,7 @@ public class ParentingPartneringReturns {
                 return "IMPOSSIBLE";
             }
         }
+
         Pair.sortWithID(pairs);
         for (int i = 0; i < n; i++) answer += pairs[i].assign;
         return answer;
