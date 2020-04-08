@@ -43,6 +43,5 @@ public class NestingDepth {
             answer += ")";
             if (index < arr.length) df();
         }
-
     }
 }

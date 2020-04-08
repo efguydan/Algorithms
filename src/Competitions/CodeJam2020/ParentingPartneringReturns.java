@@ -20,9 +20,9 @@ public class ParentingPartneringReturns {
     }
 
     private static String solve(int n, Pair[] pairs) {
-        Pair.customSort(pairs);
+        StringBuilder answer = new StringBuilder();
+        Pair.sortByValues(pairs);
         int c = -1, j = -1;
-        String answer = "";
         for (int i = 0; i < n; i++) {
             Pair pair = pairs[i];
             c = endTask(c, pair);
@@ -40,10 +40,9 @@ public class ParentingPartneringReturns {
                 return "IMPOSSIBLE";
             }
         }
-
         Pair.sortWithID(pairs);
-        for (int i = 0; i < n; i++) answer += pairs[i].assign;
-        return answer;
+        for (int i = 0; i < n; i++) answer.append(pairs[i].assign);
+        return answer.toString();
     }
 
     private static int endTask(int person, Pair task) {
@@ -53,6 +52,7 @@ public class ParentingPartneringReturns {
 }
 
 class Pair {
+
     int id;
     int x;
     int y;
@@ -64,7 +64,7 @@ class Pair {
         return "[" + id + ": " + x + ", " + y + "]";
     }
 
-    static void customSort(Pair[] pairs) {
+    static void sortByValues(Pair[] pairs) {
         Arrays.sort(pairs, (o1, o2) -> {
             if (o1.x != o2.x) {
                 return o1.x - o2.x;
