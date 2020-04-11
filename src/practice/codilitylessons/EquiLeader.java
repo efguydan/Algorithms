@@ -1,5 +1,10 @@
 package practice.codilitylessons;
 
+/**
+ * @author EfeDaniel
+ * Link: https://app.codility.com/programmers/lessons/8-leader/equi_leader/
+ * Progress: Done
+ */
 public class EquiLeader {
 
     public static void main(String[] args) {
@@ -8,7 +13,7 @@ public class EquiLeader {
     }
 
     public static int solution(int[] a) {
-        int answwer = 0;
+        int answer = 0;
         int dominator = getDominator(a);
         if (dominator == -1) return 0;
         int dCount = 0;
@@ -20,7 +25,7 @@ public class EquiLeader {
             if (isDomination(met, i + 1) && isDomination(dCount - met, a.length - i - 1)) answwer++;
         }
 
-        return answwer;
+        return answer;
     }
 
     public static boolean isDomination(int count, int size) {
