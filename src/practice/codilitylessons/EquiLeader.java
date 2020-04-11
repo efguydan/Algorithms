@@ -22,7 +22,7 @@ public class EquiLeader {
         int met = 0;
         for (int i = 0; i < a.length-1; i++) {
             if (a[i] == dominator) met++;
-            if (isDomination(met, i + 1) && isDomination(dCount - met, a.length - i - 1)) answwer++;
+            if (isDomination(met, i + 1) && isDomination(dCount - met, a.length - i - 1)) answer++;
         }
 
         return answer;
