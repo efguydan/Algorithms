@@ -8,37 +8,17 @@ import java.util.Arrays;
 public class MiscClass {
 
     public static void main(String[] args) {
-        int[] a = {6,8,4,6,8,6,6,4};
-        System.out.println(goldenLength(a));
+        int[] nums1 = {5, -7, 3, 5, -2, 4, -1};
+        System.out.println(goldenMaxSlice(nums1));
     }
 
-    public static int goldenLength(int[] a) {
-        int n = a.length;
-        int size = 0;
-        int value = 0;
-        for (int k = 0; k < n; k++) {
-            if (size == 0) {
-                size++;
-                value = a[k];
-            } else {
-                if (value != a[k]) {
-                    size--;
-                } else {
-                    size++;
-                }
-            }
+    private static int goldenMaxSlice(int[] a) {
+        int maxEnding = 0, maxSlice = 0;
+        for (int i : a) {
+            maxEnding = Math.max(0, maxEnding + i);
+            maxSlice = Math.max(maxSlice, maxEnding);
         }
-        int candidate = -1;
-        if (size > 0) candidate = value;
-        int leader = -1;
-        int count = 0;
-        for (int k = 0; k < n; k++) {
-            if (a[k] == candidate) count++;
-        }
-        if (count > n/2) {
-            leader = candidate;
-        }
-        return leader;
+        return maxSlice;
     }
 
 }
