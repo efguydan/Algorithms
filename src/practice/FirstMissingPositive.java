@@ -10,7 +10,7 @@ import java.util.List;
  * Progress: Done
  */
 
-public class FirstMIssingPositive {
+public class FirstMissingPositive {
     public static void main(String[] args) {
         int[] nums1 = {-1, 1, 3, 4};
         System.out.println(firstMissingPositive2(nums1));
