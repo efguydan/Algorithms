@@ -1,7 +1,8 @@
 package practice
 
+import kotlin.math.roundToInt
+
 fun main() {
-    val sample = "OOTimiBoladeEE"
-    val arr = sample.split("TimiBolade".reversed().toRegex()).joinToString(separator = "")
-    println(arr)
+    val percentage = "78.8874827"
+    println(percentage.toDouble().roundToInt())
 }
