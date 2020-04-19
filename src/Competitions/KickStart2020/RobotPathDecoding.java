@@ -3,7 +3,7 @@ package Competitions.KickStart2020;
 import java.util.Scanner;
 
 /**
- * Missing second testcase: RE
+ * Missing one testcase: RE
  */
 public class RobotPathDecoding {
 
