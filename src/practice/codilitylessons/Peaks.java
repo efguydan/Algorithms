@@ -3,6 +3,11 @@ package practice.codilitylessons;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author EfeDaniel
+ * Link: https://app.codility.com/programmers/lessons/10-prime_and_composite_numbers/peaks/
+ * Progress: Not Done
+ */
 public class Peaks {
 
     public static void main(String[] args) {
@@ -11,8 +16,23 @@ public class Peaks {
     }
 
     public static int solution(int[] a) {
+        int len = a.length;
+        List<Integer> peaks = new ArrayList<>();
+        for (int i = 1; i < len - 1; i++) {
+            if (a[i] > a[i-1] && a[i] > a[i+1]) peaks.add(i);
+        }
+        for (int i = len - 1; i > 0; i--) {
+            if (len % i != 0) continue;
+            int bi = -0;
+            int block = len / i;
+            for (int j : peaks) {
+                if (bi * block <= j && j < (bi + 1) * block) bi++;
+            }
+            if (bi == i) return i;
+        }
         return 0;
     }
+
     // 45% solution
 //    public static int solution(int[] a) {
 //        List<Integer> peaks = new ArrayList<>();

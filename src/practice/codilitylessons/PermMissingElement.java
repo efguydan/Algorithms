@@ -7,7 +7,6 @@ import java.util.Arrays;
  * Link: https://app.codility.com/programmers/lessons/3-time_complexity/tape_equilibrium/
  * Progress: Not Done
  */
-
 public class PermMissingElement {
 
     public int solution(int[] a) {
