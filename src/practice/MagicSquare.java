@@ -40,7 +40,7 @@ public class MagicSquare {
 
         int smallest = differences[0];
         for (int k = 0; k < differences.length; k++) {
-            smallest = (smallest > differences[k]) ? differences[k] : smallest;
+            smallest = Math.min(smallest, differences[k]);
         }
         return smallest;
     }
