@@ -13,7 +13,7 @@ class RemoveDuplicatesFromSortedList {
             var currentNode = head
             while (currentNode != null) {
                 while (currentNode.next != null && currentNode.next!!.`val` == currentNode.`val`) {
-                    currentNode.next = currentNode!!.next!!.next
+                    currentNode.next = currentNode.next!!.next
                 }
                 currentNode = currentNode.next
             }
