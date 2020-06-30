@@ -16,9 +16,9 @@ class LinkedListCycle {
             do {
                 tortoise = tortoise?.next
                 hare = hare?.next?.next
-            } while (tortoise != hare && tortoise != null && hare != null)
+            } while (tortoise != hare && hare != null)
 
-            return tortoise != null && hare != null
+            return hare != null
         }
     }
 
