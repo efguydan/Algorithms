@@ -1,11 +1,23 @@
 package practice.CtCI.technicalquestions;
 
+import javafx.util.Pair;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
+/**
+ *  @author EfeDaniel
+ * Link: Ctci Page 68
+ * Progress: Done
+ */
 public class four_cube_sum {
     public static void main(String[] args) {
-        betterFourCubeSum(1000);
+        fourCubeSum3(1000);
     }
 
-    public static void fourCubeSum(int n) {
+    //Time Complexity = O(n^4)
+    public static void fourCubeSum1(int n) {
         for (int i = 1; i < n; i++) {
             for (int j = 1; j < n; j++) {
                 for (int k = 1; k < n; k++) {
@@ -20,7 +32,8 @@ public class four_cube_sum {
         }
     }
 
-    public static void betterFourCubeSum(int n) {
+    //Time Complexity = O(n^3)
+    public static void fourCubeSum2(int n) {
         for (int i = 1; i < n; i++) {
             for (int j = 1; j < n; j++) {
                 for (int k = 1; k < n; k++) {
@@ -28,6 +41,28 @@ public class four_cube_sum {
                     if (cubeof(i) + cubeof(j) == cubeof(k) + cubeof(l)) {
                         System.out.println(String.format("%d %d %d %d", i, j, k, l));
                     }
+                }
+            }
+        }
+    }
+
+    //Time Complexity = O(n^2)
+    public static void fourCubeSum3(int n) {
+        Map<Integer, ArrayList<Pair<Integer, Integer>>> map = new HashMap<>();
+        for (int i = 1; i < n; i++) {
+            for (int j = 1; j < n; j++) {
+                int result = cubeof(i) + cubeof(j);
+                ArrayList<Pair<Integer, Integer>> list = map.getOrDefault(result, new ArrayList<>());
+                list.add(new Pair(i, j));
+                map.put(result, list);
+            }
+        }
+
+        for (int key : map.keySet()) {
+            ArrayList<Pair<Integer, Integer>> list = map.get(key);
+            for (Pair<Integer, Integer> pair1 : list) {
+                for (Pair<Integer, Integer> pair2 : list) {
+                    System.out.println(String.format("%d %d %d %d", pair1.getKey(), pair1.getValue(), pair2.getKey(), pair2.getValue()));
                 }
             }
         }
