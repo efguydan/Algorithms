@@ -2,8 +2,8 @@ package practice.CtCI.arraysandstrings;
 
 /**
  *  @author EfeDaniel
- * Link: Ctci Page 90
- * Progress: Passed all thinkable testcases yet
+ * Link: Ctci Page 90, 1.1
+ * Progress: Passed all tried testcases yet
  */
 public class IsUnique {
 
@@ -13,7 +13,9 @@ public class IsUnique {
         System.out.println(isUnique(""));
     }
 
-    // O(n)
+    // Solution 1
+    // Time Complexity: O(n)
+    // Space Complexity: O(1)
     private static boolean isUnique(String input) {
         boolean[] charFound = new boolean[128];
         for (char c : input.toCharArray()) {
