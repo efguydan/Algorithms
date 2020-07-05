@@ -13,6 +13,7 @@ public class IsUnique {
         System.out.println(isUnique(""));
     }
 
+    // O(n)
     private static boolean isUnique(String input) {
         boolean[] charFound = new boolean[128];
         for (char c : input.toCharArray()) {
