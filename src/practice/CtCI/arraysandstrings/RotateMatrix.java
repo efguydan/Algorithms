@@ -3,7 +3,7 @@ package practice.CtCI.arraysandstrings;
 /**
  *  @author EfeDaniel
  * Link: Ctci Page 91, 1.7
- * Progress: Done. Not tested
+ * Progress: Done. Not tested yet
  */
 public class RotateMatrix {
 
