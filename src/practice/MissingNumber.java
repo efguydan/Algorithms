@@ -1,11 +1,9 @@
 package practice;
 
 /**
- *
  * @author EfeDaniel
  * Link: https://leetcode.com/problems/missing-number/
  * Progress: Done
- *
  */
 
 public class MissingNumber {
