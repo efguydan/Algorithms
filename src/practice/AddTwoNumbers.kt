@@ -1,4 +1,4 @@
-package practice.addtwonumbers
+package practice
 
 /**
  * @author EfeDaniel
@@ -29,3 +29,5 @@ fun addNode(value: Int) {
         current = current?.next
     }
 }
+
+class ListNode(var `val`: Int) { var next: ListNode? = null }

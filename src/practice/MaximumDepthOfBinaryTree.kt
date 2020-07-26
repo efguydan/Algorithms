@@ -1,4 +1,4 @@
-package practice.maximumdepthofabinarytree
+package practice
 
 var max = 0
 
@@ -10,8 +10,13 @@ fun maxDepth(node: TreeNode?): Int {
 
 fun dfs(node: TreeNode?, depth: Int) {
     node?.run {
-        if (depth > max ) max = depth
+        if (depth > max) max = depth
         dfs(left, depth + 1)
         dfs(right, depth + 1)
     }
+}
+
+class TreeNode(var `val`: Int) {
+    var left: TreeNode? = null
+    var right: TreeNode? = null
 }
