@@ -1,5 +1,11 @@
 package practice
 
+/**
+ * @author EfeDaniel
+ * Link: https://leetcode.com/problems/maximum-depth-of-binary-tree/
+ * Progress: Done
+ */
+
 var max = 0
 
 fun maxDepth(node: TreeNode?): Int {
