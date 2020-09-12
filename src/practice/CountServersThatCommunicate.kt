@@ -1,5 +1,10 @@
 package practice
 
+/**
+ * @author EfeDaniel
+ * Link: https://leetcode.com/problems/count-servers-that-communicate
+ * Progress: Done
+ */
 object CountServersThatCommunicate {
 
     @JvmStatic
