@@ -4,7 +4,14 @@ import java.util.*
 import kotlin.math.roundToInt
 
 fun main() {
-    println(0.1 + 0.2)
-    val name = "Tolu"
-    println("${name.length} is the name")
+    val input = Scanner(System.`in`)
+    val n = input.nextInt()
+
+    var answer = 0;
+
+    for (i in 2..n step 2) {
+        answer += i;
+    }
+
+    println(answer)
 }
