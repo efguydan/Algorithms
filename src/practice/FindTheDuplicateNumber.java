@@ -2,7 +2,7 @@ package practice;
 
 /**
  *  @author EfeDaniel
- * Link: leetcode.com/problems/find-the-duplicate-number
+ * Link: https://leetcode.com/problems/find-the-duplicate-number
  * Progress: Done
  */
 public class FindTheDuplicateNumber {
