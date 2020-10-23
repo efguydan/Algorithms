@@ -2,7 +2,7 @@ package practice.codilitylessons.binarysearch;
 
 /**
  * @author EfeDaniel
- * Link: https://app.codility.com/programmers/lessons/4-counting_elements/frog_river_one/
+ * Link: https://app.codility.com/programmers/lessons/14-binary_search_algorithm/min_max_division/
  * Codility Report Link: https://app.codility.com/demo/results/trainingTNEAYE-U2J/
  * Progress: Done
  */
