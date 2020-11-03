@@ -21,6 +21,6 @@ object RectangleStrips {
             count[a[i]] = (count[a[i]] ?: 0) + 1
             if (b[i] != a[i]) count[b[i]] = (count[b[i]] ?: 0) + 1
         }
-        return count.values.max() ?: 0
+        return count.values.maxOrNull() ?: 0
     }
 }
