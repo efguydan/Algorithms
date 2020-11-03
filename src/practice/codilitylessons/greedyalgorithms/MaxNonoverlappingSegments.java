@@ -6,6 +6,7 @@ package practice.codilitylessons.greedyalgorithms;
  * Codility Report Link: https://app.codility.com/demo/results/trainingQHK9WS-QDQ/
  * Progress: Done
  */
+
 public class MaxNonoverlappingSegments {
 
     public static void main(String[] args) {
