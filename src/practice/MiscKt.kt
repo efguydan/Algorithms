@@ -1,17 +1,28 @@
 package practice
 
-import java.util.*
-import kotlin.math.roundToInt
+import kotlin.math.max
 
 fun main() {
-    val input = Scanner(System.`in`)
-    val n = input.nextInt()
+    println(solution(intArrayOf(1, 1, 5), intArrayOf(6, 5, 8)))
+}
 
-    var answer = 0;
-
-    for (i in 2..n step 2) {
-        answer += i;
+fun solution(juice: IntArray, capacity: IntArray): Int {
+    var answer = 1
+    var maxIndex = -1
+    var maxSpace = Int.MIN_VALUE
+    for (index in juice.indices) {
+        with(max(maxSpace, capacity[index] - juice[index])) {
+            if (this > maxSpace) maxIndex = index
+            maxSpace = this
+        }
     }
-
-    println(answer)
+    val temp = juice.toMutableList().also {
+        it.removeAt(maxIndex)
+        it.sort()
+    }
+    for (eachJuice in temp) {
+        maxSpace -= eachJuice
+        if (maxSpace >= 0) answer++ else break
+    }
+    return answer
 }
