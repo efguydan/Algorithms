@@ -1,18 +1,27 @@
 package practice
 
 /**
- *  @author EfeDaniel
+ * @author EfeDaniel
  * Link: https://leetcode.com/problems/merge-two-sorted-lists/problem
+ * Time Complexity: O(N)
+ * Space Complexity: O(N)
  * Progress: Done
  */
 object MergeTwoSortedLists {
 
-    // ListNode Class
+    /**
+     * ListNode Class Definition
+     */
     class ListNode(var `val`: Int) {
         var next: ListNode? = null
     }
 
-    // Main class, for tests
+    /**
+     * Main method Used mainly for testing purposes. Tests the input case:
+     * l1 = [1, 2, 4]
+     * l1 = [1, 3, 4]
+     * output = [1, 1, 2, 3, 4, 4]
+     */
     @JvmStatic
     fun main(args: Array<String>) {
         val l1 = ListNode(1).also { one ->
@@ -33,7 +42,16 @@ object MergeTwoSortedLists {
         }
     }
 
-    // Solution
+    /**
+     * Solution Method
+     * Starts by verifying both input linked lists aren't empty. It returns the other in the case when one is empty.
+     * It then makes sure h1's head is not higher than h2's head. it swaps both linked lists if that isnt the case
+     * It also keeps a reference to h1's head, to return at the end of all operations.
+     * It then loops through h2 and tries to get the nearest spot in h1 it can insert each value in.
+     * As each linked list is sorted, it always keeps the last h1 index it inserted in. therefore making this a
+     * linear solution
+     */
+
     fun mergeTwoLists(l1: ListNode?, l2: ListNode?): ListNode? {
         var h1 = l1 ?: return l2
         var h2 = l2 ?: return l1
@@ -49,6 +67,9 @@ object MergeTwoSortedLists {
         }
     }
 
+    /**
+     * Helper ListNode method to insert a node between a linked list. Just after the node it is supplied.
+     */
     private fun ListNode.insertImmediate(other: ListNode) {
         next = other.also { other.next = next }
     }
