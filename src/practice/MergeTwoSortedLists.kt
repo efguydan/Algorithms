@@ -3,8 +3,8 @@ package practice
 /**
  * @author EfeDaniel
  * Link: https://leetcode.com/problems/merge-two-sorted-lists/problem
- * Time Complexity: O(N)
- * Space Complexity: O(N)
+ * Time Complexity: O(M+N)
+ * Space Complexity: O(1)
  * Progress: Done
  */
 object MergeTwoSortedLists {
