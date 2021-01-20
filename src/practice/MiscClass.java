@@ -5,29 +5,39 @@ import java.util.Scanner;
 public class MiscClass {
 
     public static void main(String[] args) {
-        System.out.print("Enter number: ");
-        Scanner scan = new Scanner(System.in);
-        int number = scan.nextInt();
-
-        boolean numberIsPerfect = isPerfect(number);
-
-        if (numberIsPerfect == true) {
-            System.out.println(number + " is a perfect number");
-        } else {
-            System.out.println(number + " is not a perfect number");
-        }
-
+        int[] numbers = new int[] {0,1,2,3};
+        System.out.println(getDifferentNumber(numbers));
     }
 
-    private static boolean isPerfect(int number) {
-        int sumOfFactors = 0;
+    static int getDifferentNumber(int[] arr) {
+        // your code goes here
+        int len = arr.length;
+        if(arr == null || len == 0) {
+            return 0;
+        }
 
-        for (int i = 1; i <= number/2; i++) {
-            if (number % i == 0) {
-                sumOfFactors = sumOfFactors + i;
+        int[] staticArr = new int[len];
+
+        for (int i =0;i<len;i++) {
+            staticArr[i] = i;
+        }
+        boolean temp0 = false;
+        for (int i =0; i<len; i++) {
+            if(arr[i] ==0) {
+                temp0 = true;
+            } else if(arr[i] < len) {
+                staticArr[i]= -1*staticArr[i];
             }
         }
-        return sumOfFactors == number;
+        if(!temp0) {
+            return 0;
+        }
+        for (int i =1;i<len;i++) {
+            if(staticArr[i] > 0) {
+                return staticArr[i];
+            }
+        }
+        return len;
     }
 
 }
