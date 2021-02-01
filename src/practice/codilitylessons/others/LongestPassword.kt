@@ -19,6 +19,8 @@ object LongestPassword {
         return -1
     }
 
+    // 100% Solution
+
     fun String.isValid(): Boolean {
         val charArray = this.toCharArray()
         var letterCount = 0
