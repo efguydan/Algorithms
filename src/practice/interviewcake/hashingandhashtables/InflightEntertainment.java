@@ -1,6 +1,8 @@
 package practice.interviewcake.hashingandhashtables;
 
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * @author EfeDaniel
@@ -31,6 +33,23 @@ public class InflightEntertainment {
         }
 
 
+        return false;
+    }
+
+    public static boolean canTwoMoviesFillFlightBetterSolution(int[] movieLengths, int flightLength) {
+        Set<Integer> movieLengthsSeen = new HashSet<>();
+
+        for (int firstMovieLength : movieLengths) {
+
+            int matchingSecondMovieLength = flightLength - firstMovieLength;
+            if (movieLengthsSeen.contains(matchingSecondMovieLength)) {
+                return true;
+            }
+
+            movieLengthsSeen.add(firstMovieLength);
+        }
+
+        // we never found a match, so return false
         return false;
     }
 
