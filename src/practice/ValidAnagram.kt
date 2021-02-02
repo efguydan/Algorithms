@@ -34,7 +34,7 @@ object ValidAnagram {
      */
     fun bubbleSort(string: String): String {
         if (string.length < 2) return string
-        var arr = string.toCharArray()
+        val arr = string.toCharArray()
         var swapped = true
         while (swapped) {
             swapped = false
