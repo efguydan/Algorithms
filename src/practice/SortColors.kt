@@ -7,15 +7,16 @@ package practice
  */
 object SortColors {
 
-    @JvmStatic
-    fun main(args: Array<String>) {
-
-    }
-
+    /**
+     * Solution Method. Just applies bubble sort on the input array
+     */
     fun sortColors(nums: IntArray) {
         nums.bubbleSort()
     }
 
+    /**
+     * Extension function to bubble sort an Int Array
+     */
     fun IntArray.bubbleSort() {
         if (size < 2) return
         var swapped = true
