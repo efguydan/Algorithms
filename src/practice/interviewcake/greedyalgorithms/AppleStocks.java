@@ -2,7 +2,7 @@ package practice.interviewcake.greedyalgorithms;
 
 /**
  * @author EfeDaniel
- * Link: https://www.interviewcake.com/question/java/merge-sorted-arrays?course=fc1&section=array-and-string-manipulation
+ * Link: https://www.interviewcake.com/question/java/stock-price?course=fc1&section=greedy
  * Progress: Done
  */
 public class AppleStocks {
