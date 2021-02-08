@@ -1,5 +1,10 @@
 package practice.interviewcake.treesandgraphs;
 
+/**
+ * @author EfeDaniel
+ * Link: https://www.interviewcake.com/question/java/bst-checker?course=fc1&section=trees-graphs
+ * Progress: Done
+ */
 public class BinarySearchTreeChecker {
 
     public static class BinaryTreeNode {
