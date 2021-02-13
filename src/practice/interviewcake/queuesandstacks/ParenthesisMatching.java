@@ -2,7 +2,7 @@ package practice.interviewcake.queuesandstacks;
 
 /**
  * @author EfeDaniel
- * Link: https://www.interviewcake.com/question/java/largest-stack?course=fc1&section=queues-stacks
+ * Link: https://www.interviewcake.com/question/java/matching-parens?course=fc1&section=queues-stacks
  * Progress: Done
  */
 public class ParenthesisMatching {

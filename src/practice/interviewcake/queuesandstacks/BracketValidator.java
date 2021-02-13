@@ -2,6 +2,11 @@ package practice.interviewcake.queuesandstacks;
 
 import java.util.*;
 
+/**
+ * @author EfeDaniel
+ * Link: https://www.interviewcake.com/question/java/bracket-validator?course=fc1&section=queues-stacks
+ * Progress: Done
+ */
 public class BracketValidator {
 
     public static void main(String[] args) {
