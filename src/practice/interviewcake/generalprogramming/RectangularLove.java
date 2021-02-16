@@ -1,5 +1,10 @@
 package practice.interviewcake.generalprogramming;
 
+/**
+ * @author EfeDaniel
+ * Link: https://www.interviewcake.com/question/java/rectangular-love?course=fc1&section=general-programming
+ * Progress: Done
+ */
 public class RectangularLove {
 
     public static class Rectangle {
