@@ -1,20 +1,28 @@
 package practice.hashcode.practice2021.model;
 
 import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
 
 public class Pizza {
 
     int id;
-    ArrayList<String> ingredients;
+    HashSet<String> ingredients;
 
-    public Pizza(int id, ArrayList<String> ingredients) {
+    public Pizza(int id, HashSet<String> ingredients) {
         this.id = id;
         this.ingredients = ingredients;
     }
 
     public int getId() {
         return id;
+    }
+
+    public HashSet<String> getIngredients() {
+        return ingredients;
+    }
+
+    public int getIngredientsCount() {
+        return ingredients.size();
     }
 
     @Override

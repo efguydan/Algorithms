@@ -1,5 +1,9 @@
 package practice.hashcode.practice2021.model;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
 public class Teams {
 
     private int countOfTwo;
@@ -29,15 +33,50 @@ public class Teams {
     }
 
     public int getNextTeam(int max) {
-        if (countOfTwo > 0 && max > 2) {
+//        return getTeamFromTwo(max);
+//        return getTeamFromFour(max);
+        return getRandomizedTeams(max);
+    }
+
+    public int getTeamFromTwo(int max) {
+        if (countOfTwo > 0 && max >= 2) {
             countOfTwo--;
             return 2;
-        } else if (countOfThree > 0 && max > 3) {
+        } else if (countOfThree > 0 && max >= 3) {
             countOfThree--;
             return 3;
-        } else if (countOfFour > 0 && max > 4) {
+        } else if (countOfFour > 0 && max >= 4) {
             countOfFour--;
             return 4;
+        }
+        return 0;
+    }
+
+    public int getRandomizedTeams(int max) {
+        List<Integer> candidates = new ArrayList<>();
+        if (max >= 2 && countOfTwo >= 0) candidates.add(2);
+        if (max >= 3 && countOfThree >= 0) candidates.add(3);
+        if (max >= 4 && countOfFour >= 0) candidates.add(4);
+        if (candidates.isEmpty()) return 0;
+        if (candidates.size() == 1) return candidates.get(0);
+        Random rnd = new Random();
+        int guess = candidates.get(rnd.nextInt(candidates.size() - 1));
+        if (guess == 2) countOfTwo--;
+        if (guess == 3) countOfThree--;
+        if (guess == 4) countOfFour--;
+        return guess;
+    }
+
+    public int getTeamFromFour(int max) {
+        if (countOfFour > 0 && max >= 4) {
+            countOfFour--;
+            return 4;
+        } else if (countOfThree > 0 && max >= 3) {
+            countOfThree--;
+            return 3;
+        } else if(countOfTwo > 0 && max >= 2) {
+            countOfTwo--;
+            return 2;
         }
         return 0;
     }

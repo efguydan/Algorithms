@@ -5,7 +5,7 @@ import practice.hashcode.practice2021.model.Pizza;
 import practice.hashcode.practice2021.model.Teams;
 
 import java.io.*;
-import java.util.ArrayList;
+import java.util.*;
 
 public class Solution {
 
@@ -32,7 +32,7 @@ public class Solution {
             for (int i = 0; i < pizzaCount; i++) {
                 String l = bufferedReader.readLine();
                 String[] lArray = l.split(" ");
-                ArrayList<String> ingredients = new ArrayList<>(Integer.parseInt(lArray[0]));
+                HashSet<String> ingredients = new HashSet<>(Integer.parseInt(lArray[0]));
                 for (int k = 1; k < lArray.length; k++) ingredients.add(lArray[k]);
                 Pizza pizza = new Pizza(i, ingredients);
                 inputList.add(pizza);
@@ -43,15 +43,50 @@ public class Solution {
     }
 
     public void simulate() {
+        inputList.sort(Comparator.comparingInt(o -> o.getIngredients().size()));
+        Collections.reverse(inputList);
+
         int teamCount;
         while((teamCount = teamCounts.getNextTeam(inputList.size())) != 0) {
             Delivery delivery = new Delivery(teamCount);
-            ArrayList<Integer> list = new ArrayList<>();
-            for (int i = 0; i < delivery.getTeamCount(); i++) {
-                Pizza pizza = inputList.remove(0);
-                list.add(pizza.getId());
+            ArrayList<Integer> pizzas = new ArrayList<>();
+
+            ArrayList<Integer> selectedPizzas = new ArrayList<>();
+            selectedPizzas.add(0);
+            Set<String> ingredients = new HashSet<>(inputList.get(0).getIngredients());
+
+            while (selectedPizzas.size() < teamCount) {
+                int selectedIndex = 0;
+                HashSet<String> ingredientsCopy = new HashSet<>(inputList.get(0).getIngredients());
+                ingredientsCopy.removeAll(ingredients);
+                int score = ingredientsCopy.size();
+
+                int end = Integer.min(100, inputList.size());
+                for (int i = 1; i < end; i++) {
+                    if (selectedPizzas.contains(i)) continue;
+                    HashSet<String> copy = new HashSet<>(inputList.get(i).getIngredients());
+                    copy.removeAll(ingredients);
+                    if (copy.size() > score) {
+                        score = copy.size();
+                        selectedIndex = i;
+                    } else if (copy.size() == score) {
+                        if (inputList.get(selectedIndex).getIngredientsCount() > inputList.get(i).getIngredientsCount()) {
+                            selectedIndex = i;
+                        }
+                    }
+                }
+                selectedPizzas.add(selectedIndex);
             }
-            delivery.setPizzasDelivered(list);
+
+            Collections.sort(selectedPizzas);
+            Collections.reverse(selectedPizzas);
+            for (int selectedPizza: selectedPizzas) {
+                Pizza pizza = inputList.remove(selectedPizza);
+                pizzas.add(pizza.getId());
+                System.out.println(inputList.size());
+            }
+
+            delivery.setPizzasDelivered(pizzas);
             outPutList.add(delivery);
         }
     }
