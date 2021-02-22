@@ -4,3 +4,4 @@
 .idea/workspace.xml
 lib/
 out/
+*.DS_Store
