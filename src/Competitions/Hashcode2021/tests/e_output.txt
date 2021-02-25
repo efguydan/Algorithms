@@ -31,8 +31,7 @@ g-h 1
 1
 h-i 1
 9
-2
-ejj-j 1
+1
 i-j 1
 10
 1
@@ -115,9 +114,8 @@ ejj-db 1
 1
 db-dc 1
 33
-2
+1
 dc-dd 1
-ejj-dd 1
 34
 1
 dd-de 1
@@ -143,16 +141,14 @@ di-dj 1
 1
 dj-ea 1
 41
-2
+1
 ea-eb 1
-ejj-eb 1
 42
 1
 eb-ec 1
 43
-2
+1
 ec-ed 1
-ejj-ed 1
 44
 1
 ed-ee 1
@@ -178,8 +174,7 @@ ejj-ej 1
 1
 ej-fa 1
 51
-2
-ejj-fb 1
+1
 fa-fb 1
 52
 1
@@ -226,9 +221,8 @@ gc-gd 1
 1
 gd-ge 1
 65
-2
+1
 ge-gf 1
-ejj-gf 1
 66
 1
 gf-gg 1
@@ -345,9 +339,8 @@ jg-jh 1
 1
 jh-ji 1
 99
-2
+1
 ji-jj 1
-ejj-jj 1
 100
 1
 jj-baa 1
@@ -589,9 +582,8 @@ bgg-bgh 1
 1
 bgh-bgi 1
 169
-2
+1
 bgi-bgj 1
-ejj-bgj 1
 170
 1
 bgj-bha 1
@@ -603,8 +595,7 @@ bha-bhb 1
 1
 bhb-bhc 1
 173
-2
-ejj-bhd 1
+1
 bhc-bhd 1
 174
 1
@@ -680,8 +671,7 @@ bjc-bjd 1
 1
 bjd-bje 1
 195
-2
-ejj-bjf 1
+1
 bje-bjf 1
 196
 1
@@ -861,8 +851,7 @@ ejj-cef 1
 1
 cef-ceg 1
 247
-2
-ejj-ceh 1
+1
 ceg-ceh 1
 248
 1
@@ -909,8 +898,7 @@ ejj-cfj 1
 1
 cfj-cga 1
 261
-2
-ejj-cgb 1
+1
 cga-cgb 1
 262
 1
@@ -964,8 +952,7 @@ ejj-chf 1
 1
 chf-chg 1
 277
-2
-ejj-chh 1
+1
 chg-chh 1
 278
 1
@@ -978,16 +965,14 @@ ejj-chj 1
 1
 chj-cia 1
 281
-2
-ejj-cib 1
+1
 cia-cib 1
 282
 1
 cib-cic 1
 283
-2
+1
 cic-cid 1
-ejj-cid 1
 284
 1
 cid-cie 1
@@ -1123,9 +1108,8 @@ ejj-dcb 1
 1
 dcb-dcc 1
 323
-2
+1
 dcc-dcd 1
-ejj-dcd 1
 324
 1
 dcd-dce 1
@@ -1158,9 +1142,8 @@ ejj-ddb 1
 1
 ddb-ddc 1
 333
-2
+1
 ddc-ddd 1
-ejj-ddd 1
 334
 1
 ddd-dde 1
@@ -1274,9 +1257,8 @@ dge-dgf 1
 1
 dgf-dgg 1
 367
-2
+1
 dgg-dgh 1
-ejj-dgh 1
 368
 1
 dgh-dgi 1
@@ -1316,9 +1298,8 @@ ejj-dhh 1
 1
 dhh-dhi 1
 379
-2
+1
 dhi-dhj 1
-ejj-dhj 1
 380
 1
 dhj-dia 1
@@ -1337,9 +1318,8 @@ ejj-did 1
 1
 did-die 1
 385
-2
+1
 die-dif 1
-ejj-dif 1
 386
 1
 dif-dig 1
@@ -1365,8 +1345,7 @@ dja-djb 1
 1
 djb-djc 1
 393
-2
-ejj-djd 1
+1
 djc-djd 1
 394
 1
@@ -1392,9 +1371,8 @@ ejj-djj 1
 1
 djj-eaa 1
 401
-2
+1
 eaa-eab 1
-ejj-eab 1
 402
 1
 eab-eac 1
@@ -1427,9 +1405,8 @@ eai-eaj 1
 1
 eaj-eba 1
 411
-2
+1
 eba-ebb 1
-ejj-ebb 1
 412
 1
 ebb-ebc 1

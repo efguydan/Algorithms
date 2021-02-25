@@ -56584,11 +56584,9 @@ dhcb-cjgb 1
 bebc-cjgb 1
 gfaf-cjgb 1
 2962
-5
+3
 jgi-cjgc 1
 bbac-cjgc 1
-cceb-cjgc 1
-chf-cjgc 1
 ccfj-cjgc 1
 2963
 9
@@ -70050,12 +70048,11 @@ cbd-edci 1
 di-edci 1
 bcdc-edci 1
 4329
-5
+4
 cfe-edcj 1
 igg-edcj 1
 gdhb-edcj 1
 dggd-edcj 1
-ee-edcj 1
 4330
 8
 ggfd-edda 1
@@ -77405,9 +77402,8 @@ fbcg-fbfh 1
 chif-fbfh 1
 hchi-fbfh 1
 5158
-8
+7
 bh-fbfi 1
-jii-fbfi 1
 fhd-fbfi 1
 dfga-fbfi 1
 bihc-fbfi 1
@@ -79570,10 +79566,9 @@ fb-feaf 1
 ccif-feaf 1
 heig-feaf 1
 5406
-8
+7
 gdjc-feag 1
 dejb-feag 1
-bcgf-feag 1
 bgi-feag 1
 hgjh-feag 1
 cjbh-feag 1
@@ -87564,8 +87559,7 @@ dagg-gdia 1
 fdff-gdia 1
 hi-gdia 1
 6381
-10
-dcab-gdib 1
+9
 hbhh-gdib 1
 dcbi-gdib 1
 hggj-gdib 1

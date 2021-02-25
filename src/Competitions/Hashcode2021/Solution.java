@@ -103,20 +103,24 @@ public class Solution {
         // Considering Amount of Cars on each street
         for (int id: outputList.keySet()) {
             ArrayList<String> streetNames = outputList.get(id);
-            int min = Integer.MAX_VALUE;
+
+            int total = 0;
             for (String streetName: streetNames) {
                 Street street = streets.get(streetName);
-                min = Math.min(min, street.possibleCars);
+                total += street.possibleCars;
             }
 
+            int average = total / streetNames.size();
+            average /= 2;
+
+            ArrayList<String> temp = new ArrayList<>();
             for (String streetName: streetNames) {
                 Street street = streets.get(streetName);
-                street.openDuration = street.duration / min;
-                if (street.openDuration < 1) street.openDuration = 1;
-                if (street.openDuration > 2) street.openDuration = 2;
-
                 street.openDuration = 1;
+
+                if (street.possibleCars >= average) temp.add(streetName);
             }
+            outputList.put(id, temp);
         }
         System.out.println("Test");
     }
