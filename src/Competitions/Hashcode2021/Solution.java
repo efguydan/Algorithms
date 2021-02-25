@@ -111,9 +111,14 @@ public class Solution {
 
             for (String streetName: streetNames) {
                 Street street = streets.get(streetName);
-                street.openDuration = (int) Math.ceil((double) street.duration / (double) min);
+                street.openDuration = street.duration / min;
+                if (street.openDuration < 1) street.openDuration = 1;
+                if (street.openDuration > 2) street.openDuration = 2;
+
+                street.openDuration = 1;
             }
         }
+        System.out.println("Test");
     }
 
     public void parseOutput(String filename) {
