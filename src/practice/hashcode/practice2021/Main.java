@@ -2,7 +2,6 @@ package practice.hashcode.practice2021;
 
 public class Main {
     public static void main(String[] args) {
-        String[] exampleInput = {"a_example"};
         String[] inputs = {"a_example", "b_little_bit_of_everything", "c_many_ingredients", "d_many_pizzas", "e_many_teams"};
 
         for (String in : inputs) {

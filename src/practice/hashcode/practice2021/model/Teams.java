@@ -34,8 +34,8 @@ public class Teams {
 
     public int getNextTeam(int max) {
 //        return getTeamFromTwo(max);
-//        return getTeamFromFour(max);
-        return getRandomizedTeams(max);
+        return getTeamFromFour(max);
+//        return getRandomizedTeams(max);
     }
 
     public int getTeamFromTwo(int max) {
