@@ -17,8 +17,8 @@ public class RepeatedString {
         for (int i = 0; i < s.length(); i++) {
             if (s.charAt(i) == 'a') noA++;
         }
-        answer += noA * n / s.length();
-        int toReach = (int) n % s.length();
+        answer += noA * (n / s.length());
+        int toReach = (int) (n % s.length());
         for (int i = 0; i < toReach; i++) {
             if (s.charAt(i) == 'a') answer++;
         }
