@@ -3,7 +3,7 @@ package practice.hackerranklessons.warmup;
 /**
  * @author EfeDaniel
  * Link: www.hackerrank.com/challenges/repeated-string/problem
- * Progress: Not Done
+ * Progress: Done
  */
 public class RepeatedString {
 
