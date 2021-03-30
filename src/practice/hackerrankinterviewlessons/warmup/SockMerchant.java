@@ -1,4 +1,4 @@
-package practice.hackerranklessons.warmup;
+package practice.hackerrankinterviewlessons.warmup;
 
 import java.util.HashSet;
 import java.util.Set;

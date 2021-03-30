@@ -1,4 +1,4 @@
-package practice.hackerranklessons.warmup;
+package practice.hackerrankinterviewlessons.warmup;
 
 /**
  * @author EfeDaniel
