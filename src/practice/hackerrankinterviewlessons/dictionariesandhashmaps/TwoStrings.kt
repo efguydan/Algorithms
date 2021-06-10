@@ -1,4 +1,4 @@
-package practice
+package practice.hackerrankinterviewlessons.dictionariesandhashmaps
 
 /**
  * @author EfeDaniel
@@ -11,4 +11,6 @@ package practice
 //    return "NO"
 //}
 
-fun twoStrings(s1: String, s2: String): String  = if (s1.toSet().intersect(s2.toSet()).isNotEmpty()) "YES" else "NO"
+object TwoStrings {
+    fun twoStrings(s1: String, s2: String): String  = if (s1.toSet().intersect(s2.toSet()).isNotEmpty()) "YES" else "NO"
+}
