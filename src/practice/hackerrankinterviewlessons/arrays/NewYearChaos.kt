@@ -12,7 +12,6 @@ object NewYearChaos {
     /**
      * Main method main used for testing purposes
      * Tests multiple input cases
-     *
      */
     @JvmStatic
     fun main(args: Array<String>) {
