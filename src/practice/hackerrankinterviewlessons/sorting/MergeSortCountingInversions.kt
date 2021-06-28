@@ -3,6 +3,10 @@ package practice.hackerrankinterviewlessons.sorting
 /**
  * @author EfeDaniel
  * Link: https://www.hackerrank.com/challenges/ctci-merge-sort/problem
+ * Resources: [
+ *      https://www.hackerrank.com/challenges/ctci-merge-sort/forum,
+ *      https://www.coursera.org/specializations/algorithms
+ * ]
  * Progress: Done
  */
 object MergeSortCountingInversions {
