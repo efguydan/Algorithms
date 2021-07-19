@@ -1,8 +1,5 @@
 package practice
 
-object MiscKt {
+fun main() {
 
 }
-
-
-
