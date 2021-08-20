@@ -1,4 +1,4 @@
-package practice.kthSmallestElementInABst;
+package practice;
 
 import java.util.ArrayList;
 import java.util.Set;
@@ -16,5 +16,12 @@ public class kthSmallestElementInABST {
         elements.add(node.val);
         addElements(elements, node.left);
         addElements(elements, node.right);
+    }
+
+    public class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+        TreeNode(int x) { val = x; }
     }
 }

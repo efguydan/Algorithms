@@ -1,4 +1,4 @@
-package practice.ValidateBinarySearchTree;
+package practice;
 
 /**
  * @author EfeDaniel
@@ -27,4 +27,10 @@ public class ValidateBinarySearchTree {
         return status;
     }
 
+    public static class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+        TreeNode(int x) { val = x; }
+    }
 }
