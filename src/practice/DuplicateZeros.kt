@@ -15,7 +15,7 @@ object DuplicateZeros {
         duplicateZeros2(arr)
         println(arr.contentToString())
 
-        val arr2 = intArrayOf(1,0,2,3,0,0,4,5)
+        val arr2 = intArrayOf(1,0,2,3,0,0,4,5) // 1,0,0,2,3,0,0,0
         duplicateZeros2(arr2)
         println(arr2.contentToString())
 
@@ -66,10 +66,9 @@ object DuplicateZeros {
 
         var r = len
         i = len - zeros
-        while (i >= 0) {
+        while (i != r) {
             if (arr[i] == 0) arr[r--] = 0
-            arr[r--] = arr[i]
-            i--
+            arr[r--] = arr[i--]
         }
     }
 
