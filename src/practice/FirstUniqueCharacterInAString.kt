@@ -1,0 +1,29 @@
+package practice
+
+import java.lang.Exception
+
+/**
+ * @author EfeDaniel
+ * Link: https://www.hackerrank.com/challenges/bigger-is-greater/problem
+ * Progress: Done
+ */
+
+object FirstUniqueCharacterInAString {
+
+    @JvmStatic
+    fun main(args: Array<String>) {
+
+    }
+
+    fun firstUniqChar(s: String): Int {
+        var map = mutableMapOf<Char, Int>()
+        var characters = s.toCharArray()
+
+        characters.forEachIndexed { index, c ->
+            map[c] = if (map.containsKey(c)) -1 else index
+        }
+
+        return try { map.values.first { it != -1 } } catch (e: Exception) { -1 }
+    }
+
+}
