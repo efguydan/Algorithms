@@ -23,7 +23,7 @@ object FirstUniqueCharacterInAString {
             map[c] = if (map.containsKey(c)) -1 else index
         }
 
-        return try { map.values.first { it != -1 } } catch (e: Exception) { -1 }
+        return map.values.firstOrNull { it != -1 } ?: -1
     }
 
 }
