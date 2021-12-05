@@ -1,7 +1,5 @@
 package practice
 
-import java.lang.Exception
-
 /**
  * @author EfeDaniel
  * Link: https://www.hackerrank.com/challenges/bigger-is-greater/problem
@@ -12,7 +10,7 @@ object FirstUniqueCharacterInAString {
 
     @JvmStatic
     fun main(args: Array<String>) {
-
+        println(firstUniqChar("efe"))
     }
 
     fun firstUniqChar(s: String): Int {

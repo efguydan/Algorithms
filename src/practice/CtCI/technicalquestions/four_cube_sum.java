@@ -1,6 +1,6 @@
 package practice.CtCI.technicalquestions;
 
-import javafx.util.Pair;
+import kotlin.Pair;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -62,7 +62,7 @@ public class four_cube_sum {
             ArrayList<Pair<Integer, Integer>> list = map.get(key);
             for (Pair<Integer, Integer> pair1 : list) {
                 for (Pair<Integer, Integer> pair2 : list) {
-                    System.out.println(String.format("%d %d %d %d", pair1.getKey(), pair1.getValue(), pair2.getKey(), pair2.getValue()));
+                    System.out.println(String.format("%d %d %d %d", pair1.getFirst(), pair1.getSecond(), pair2.getFirst(), pair2.getSecond()));
                 }
             }
         }
