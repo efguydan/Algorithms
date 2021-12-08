@@ -1,7 +1,5 @@
 package practice
 
-import java.util.*
-
 object MiscKt {
 
     @JvmStatic
