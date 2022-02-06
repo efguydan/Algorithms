@@ -1,32 +1,32 @@
 package practice;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class MiscClass {
 
     public static void main(String[] args) {
+        List<Integer> list = new ArrayList<>();
+        list.add(2);
+        list.add(4);
+        list.add(5);
+
+        System.out.println(hackerCards(list, 7));
     }
 
-    public static int stockPairs(List<Integer> stocksProfit, long target) {
-        Set<Integer> keys = new HashSet<>();
-        Set<String> answer = new HashSet<>();
+    public static List<Integer> hackerCards(List<Integer> collection, int d) {
+        List<Integer> answer = new ArrayList<>();
+        Set<Integer> coll = new HashSet<>(collection);
 
-        for (int num: stocksProfit) {
-            int counterpart = (int) (target - num);
-            if (keys.contains(counterpart)) {
-                answer.add(getKey(num, counterpart));
-            } else {
-                keys.add(num);
+        int i = 1;
+        while (d > 0 && d > i) {
+            if (!coll.contains(i)) {
+                answer.add(i);
+                d -= i;
             }
+            i++;
         }
 
-        return answer.size();
-    }
-
-    private static String getKey(int a, int b) {
-        return a + "-" + b;
+        return answer;
     }
 
 }
