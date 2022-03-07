@@ -15,7 +15,6 @@ object HandOfStraights {
     }
 
     private fun isNStraightHand(hand: IntArray, groupSize: Int): Boolean {
-        val list = listOf<Any>()
         if (hand.size % groupSize != 0) return false
         hand.sort()
 
