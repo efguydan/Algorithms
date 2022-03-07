@@ -7,6 +7,7 @@ import java.io.IOException
 class Solution {
 
     private val inputList = mutableListOf<String>()
+    val characterMap = mutableMapOf<Char, Int>()
     private val outputList = mutableListOf<String>()
 
     fun parseInput(fileName: String) {
@@ -24,7 +25,15 @@ class Solution {
     }
 
     fun simulate() {
+        for (word in inputList) {
+            for (char in word) characterMap[char] = (characterMap[char] ?: 0) + 1
+        }
+        val mapReversed = characterMap.entries.associateBy({it.value}) { it.key }
+        val values = mapReversed.keys.sortedDescending()
 
+        for (value in values) {
+            println(mapReversed[value])
+        }
     }
 
     fun parseOutput(fileName: String) {

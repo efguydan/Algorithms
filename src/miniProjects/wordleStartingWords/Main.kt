@@ -5,9 +5,8 @@ object Main {
     @JvmStatic
     fun main(args: Array<String>) {
 
-        //TODO Add name of individual test files here
-        val filepath = "Add your files path here"
-        val inputs = listOf("name_of_file1", "name_of_file2")
+        val filepath = "/Users/efedaniel/IdeaProjects/Algorithms/src/miniProjects/wordleStartingWords/"
+        val inputs = listOf("sgb-words")
 
         for (fileName in inputs) {
             val solution = Solution()
