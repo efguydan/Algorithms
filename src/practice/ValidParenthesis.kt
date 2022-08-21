@@ -15,8 +15,3 @@ fun isValid(s: String): Boolean {
     }
     return true
 }
-//
-//fun isValid(s: String): Boolean {
-//
-//    return true
-//}
