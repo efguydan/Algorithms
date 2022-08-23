@@ -1,5 +1,7 @@
 package practice
 
+import java.util.BitSet
+
 /**
  * @author EfeDaniel
  * Link: https://leetcode.com/problems/valid-anagram/
@@ -14,8 +16,8 @@ object ValidAnagram {
      */
     @JvmStatic
     fun main(args: Array<String>) {
-        println(isAnagram("anagram", "nagaram"))
-        println(isAnagram("a", "b"))
+        println(isAnagram2("anagram", "nagaram"))
+        println(isAnagram2("a", "b"))
     }
 
     /**
@@ -27,6 +29,22 @@ object ValidAnagram {
     fun isAnagram(s: String, t: String): Boolean {
         if (s.length != t.length) return false
         return s.sort() == t.sort()
+    }
+
+    /**
+     * Solution Method. Map the first string into a character map. Then compare it with the second string
+     */
+    fun isAnagram2(s: String, t: String): Boolean {
+        var map = mutableMapOf<Char, Int>()
+        for (char in s) map[char] = (map[char] ?: 0) + 1
+        for (char in t) {
+            val current = map[char] ?: return false
+            (current - 1).let {
+                if (it == 0) map.remove(char)
+                else map[char] = it
+            }
+        }
+        return map.isEmpty()
     }
 
     /**
