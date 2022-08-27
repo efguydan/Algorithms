@@ -3,7 +3,7 @@ package practice
 /**
  * @author EfeDaniel
  * Link: https://leetcode.com/problems/group-anagrams/
- * Concepts: DP
+ * Concepts: Array & Hashing
  * Progress: Done
  */
 object GroupAnagrams {
