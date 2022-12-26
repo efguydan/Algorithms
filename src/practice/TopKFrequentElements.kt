@@ -15,7 +15,7 @@ object TopKFrequentElements {
     }
 
     /**
-     * The idea is to find the count of each item, then distribute each count into a an array of keys. where the
+     * The idea is to find the count of each item, then distribute each count into an array of keys. where the
      * key is the count. Then get the highest k.
      */
     fun topKFrequent(nums: IntArray, k: Int): IntArray {
