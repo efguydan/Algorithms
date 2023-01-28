@@ -1,85 +1,31 @@
 package practice
 
-import java.util.*
-import kotlin.math.pow
-import kotlin.math.roundToInt
-
 object MiscKt {
 
     @JvmStatic
     fun main(args: Array<String>) {
-        println(
-            solution(
-                listOf(
-                    listOf(1,2),
-                    listOf(3,4),
-                    listOf(1,-1)
-                ),
-                2
-            )
-        )
+        println(firstMissingPositive(intArrayOf(3,4,-1,1)))
+        println(firstMissingPositive(intArrayOf(1,2,0)))
+        println(firstMissingPositive(intArrayOf(7,8,9,11,12)))
+        println(firstMissingPositive(intArrayOf(2,1)))
+//        println(firstMissingPositive(intArrayOf(10,4,16,54,17,-7,21,15,25,31,61,1,6,12,21,46,16,56,54,12,23,20,38,63,2,27,35,11,13,47,13,11,61,39,0,14,42,8,16,54,50,12,-10,43,11,-1,24,38,-10,13,60,0,44,11,50,33,48,20,31,-4,2,54,-6,51,6)))
     }
 
-    fun solution(locations: List<List<Int>> , n: Int): List<List<Int>> {
-        var answer = mutableListOf<List<Int>>()
-        val heap = PriorityQueue<Int>(Collections.reverseOrder())
-        val map = mutableMapOf<Int, MutableList<List<Int>>>()
-
-        for (location in locations) {
-            val distance = computeDistance(location)
-
-            if (heap.size < n) {
-                addLocation(location, distance, heap, map)
-                continue
-            }
-
-            val max = heap.peek()
-            if (distance < max) {
-                removeLocation(heap, map)
-                addLocation(location, distance, heap, map)
+    fun firstMissingPositive(nums: IntArray): Int {
+        for (index in nums.indices) {
+            if (nums[index] > 0 && nums[index] - 1 <= nums.lastIndex) {
+                recurse(nums, nums[index] - 1, index)
             }
         }
-
-        for (values in map.values) {
-            answer.addAll(values)
-        }
-
-        return answer
+        println(nums.contentToString())
+        for (i in nums.indices) if (nums[i] != i + 1) return i + 1
+        return nums.size + 1
     }
 
-    private fun addLocation(
-        location: List<Int>,
-        distance: Int,
-        heap: PriorityQueue<Int>,
-        map: MutableMap<Int, MutableList<List<Int>>>
-    ) {
-        heap.add(distance)
-
-        var current = map[distance]
-        if (current == null) current = mutableListOf()
-        current.add(location)
-        map[distance] = current
+    private fun recurse(nums: IntArray, index: Int, baseIndex: Int) {
+        if (index == baseIndex) nums[index] = index + 1
+        if (index > nums.lastIndex || index < 0 || index + 1 == nums[index]) return
+        recurse(nums, nums[index] - 1, baseIndex)
+        nums[index] = index + 1
     }
-
-    private fun removeLocation(
-        heap: PriorityQueue<Int>,
-        map: MutableMap<Int, MutableList<List<Int>>>
-    ) {
-        val currentList = map[max]!!
-        currentList.removeLast()
-
-        if (currentList.isNotEmpty()) {
-            map[max] = currentList
-        } else {
-            map.remove(max)
-        }
-        heap.remove()
-    }
-
-    private fun computeDistance(location: List<Int>) =
-        (location.first().toDouble().pow(2) + location.last().toDouble().pow(2))
-            .roundToInt()
-
-
 }
-

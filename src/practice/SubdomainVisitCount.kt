@@ -20,13 +20,13 @@ object SubdomainVisitCount {
             val split = domain.split(" ")
             val count = split[0].toInt()
             var url = split[1]
-            while (url.isNotEmpty()) {
+            while (true) {
                 map[url] = (map[url] ?: 0) + count
                 val firstIndex = url.indexOf('.')
                 if (firstIndex != -1) {
                     url = url.removeRange(0, firstIndex+1)
                 } else {
-                    url = ""
+                    break
                 }
             }
         }
