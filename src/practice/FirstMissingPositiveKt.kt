@@ -5,7 +5,7 @@ package practice
  * Link: https://leetcode.com/problems/first-missing-positive/description/
  * Progress: Done
  */
-object FirstMissingPositive {
+object FirstMissingPositiveKt {
 
     @JvmStatic
     fun main(args: Array<String>) {
