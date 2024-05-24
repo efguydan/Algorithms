@@ -32,7 +32,7 @@ object LongestRepeatingCharacterReplacement {
             val chatAtStartIndex = sArray[start] - 'A'
             countArray[chatAtStartIndex]++
 
-            while (start - end + 1 - countArray.max() > k) {
+            while (start - end + 1 - countArray.maxOrNull()!! > k) {
                 val chatAtEndIndex = sArray[end] - 'A'
                 countArray[chatAtEndIndex]--
                 end++
