@@ -6,7 +6,7 @@ package practice
  * Progress: Done
  */
 
-var i = 0
+private var i = 0
 lateinit var charArray: CharArray
 
 fun main() {
