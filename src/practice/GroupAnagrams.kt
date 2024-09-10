@@ -18,7 +18,6 @@ object GroupAnagrams {
      */
     fun groupAnagrams(strs: Array<String>): List<List<String>> {
         val map = mutableMapOf<String, MutableList<String>>()
-        val answer = mutableListOf<List<String>>()
         for (word in strs) {
             val key = convertWordIntoKey(word)
             val list = map.getOrDefault(key, mutableListOf())
